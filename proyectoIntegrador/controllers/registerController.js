@@ -1,4 +1,4 @@
-let registercontrollers = {
+let registerController = {
 
     index : (req, res) => { 
      res.render('register'); },
@@ -6,4 +6,4 @@ let registercontrollers = {
  
    }
  
- module.exports = registercontrollers;
+ module.exports = registerController;

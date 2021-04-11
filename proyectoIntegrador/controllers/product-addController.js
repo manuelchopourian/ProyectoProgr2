@@ -1,4 +1,4 @@
-let productaddcontrollers = {
+let productAddController = {
 
     index : (req, res) => { 
      res.render('product-add'); },
@@ -6,4 +6,4 @@ let productaddcontrollers = {
  
    }
  
- module.exports = productaddcontrollers;
+ module.exports = productAddController;

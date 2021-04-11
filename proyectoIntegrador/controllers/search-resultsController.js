@@ -1,4 +1,4 @@
-let searchresultscontrollers = {
+let searchResultsController = {
 
     index : (req, res) => { 
      res.render('search-results'); },
@@ -6,4 +6,4 @@ let searchresultscontrollers = {
  
    }
  
- module.exports = searchresultscontrollers;
+ module.exports = searchResultsController;

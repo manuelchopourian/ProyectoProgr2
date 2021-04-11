@@ -1,4 +1,4 @@
-let profileeditcontrollers = {
+let profileEditController = {
 
     index : (req, res) => { 
      res.render('profile-edit'); },
@@ -6,4 +6,4 @@ let profileeditcontrollers = {
  
    }
  
- module.exports = profileeditcontrollers;
+ module.exports = profileEditController;

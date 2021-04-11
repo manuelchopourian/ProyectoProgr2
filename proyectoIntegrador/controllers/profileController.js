@@ -1,4 +1,4 @@
-let profilecontrollers = {
+let profileController = {
 
     index : (req, res) => { 
      res.render('profile'); },
@@ -6,4 +6,4 @@ let profilecontrollers = {
  
    }
  
- module.exports = profilecontrollers;
+ module.exports = profileController;

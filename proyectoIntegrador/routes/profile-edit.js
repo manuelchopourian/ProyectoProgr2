@@ -1,9 +1,9 @@
 let express = require('express');
 let router = express.Router();
-let profileeditcontrollers = require('../controllers/profile-editController');
+let profileEditController = require('../controllers/profile-editController');
 
 
 /* GET productos listing listing. */
-router.get('/', profileeditcontrollers.index)
+router.get('/', profileEditController.index)
 
 module.exports = router;

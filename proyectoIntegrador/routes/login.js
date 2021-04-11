@@ -1,10 +1,10 @@
 let express = require('express');
 let router = express.Router();
-let logincontrollers = require('../controllers/loginController');
+let loginController = require('../controllers/loginController');
 
 
 /* GET productos listing listing. */
-router.get('/', logincontrollers.index)
+router.get('/', loginController.index)
 
 module.exports = router;
 

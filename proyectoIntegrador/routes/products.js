@@ -1,9 +1,9 @@
 let express = require('express');
 let router = express.Router();
-let productcontrollers = require('../controllers/productController');
+let productController = require('../controllers/productController');
 
 
 /* GET productos listing listing. */
-router.get('/', productcontrollers.index)
+router.get('/', productController.index)
 
 module.exports = router;

@@ -1,4 +1,4 @@
-let productcontrollers = {
+let productController = {
 
     index : (req, res) => { 
      res.render('product'); },
@@ -6,4 +6,4 @@ let productcontrollers = {
  
    }
  
- module.exports = productcontrollers;
+ module.exports = productController;
