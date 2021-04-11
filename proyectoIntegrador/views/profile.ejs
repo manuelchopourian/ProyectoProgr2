@@ -10,25 +10,46 @@
 			<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="../public/stylesheets/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="./css/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="../public/stylesheets/app.css">
+	<link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
 	<%- include('./partials/header')  %>
-	<!-- Banner -->
-	<div class="banner">
-		<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
-	</div>
-	<!-- /Banner -->
+	<!-- Datos del usuario -->
+	<section class="info-usuario container products-wrapper">
+		<div class="row">
+			<div class="img-container offset-3 col-2">
+				<img src="https://via.placeholder.com/150" alt="foto de perfil" class="foto-perfil">
+			</div>
+			<div class="data-container col-6">
+				<div class="d-flex align-items-center ">
+					<h1 class="main-title">Nombre del usuario 
+						<a href="profile-edit.html">
+							<i class="fas fa-cog"></i>
+						</a>
+					</h1>
+					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+				</div>
+				<div>
+					<ul class="">
+						<li>8 productos</li>
+						<li>200 seguidores</li>
+						<li>300 comentarios</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /Datos del usuario -->
 
-	<!-- Novedades -->
+	<!-- Mis productos -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Novedades</h2>
+				<h2 class="products-title">Mis productos</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
+			<!-- Show mis productos -->
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href="product.html">
@@ -88,16 +109,6 @@
 					</a>
 				</section>
 			</div>
-		</div>
-	</div>
-	<!-- /Novedades -->
-	<!-- Más comentados -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Más comentados</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href="product.html">
@@ -106,7 +117,8 @@
 						</figure>
 						<article class="product-box_data">
 							<h2>Nombre del producto</h2>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
+							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+								delectus ex</p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -120,7 +132,8 @@
 						</figure>
 						<article class="product-box_data">
 							<h2>Nombre del producto</h2>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
+							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+								delectus ex</p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -134,7 +147,8 @@
 						</figure>
 						<article class="product-box_data">
 							<h2>Nombre del producto</h2>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
+							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+								delectus ex</p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -148,7 +162,8 @@
 						</figure>
 						<article class="product-box_data">
 							<h2>Nombre del producto</h2>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
+							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
+								delectus ex</p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -156,7 +171,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- /Más comentados -->
+	<!-- /Mis productos -->
 
 
 	<!-- footer -->
