@@ -26,13 +26,34 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario de registro. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
-
+			<form class="" action="" method="POST">
+				<p> <label for="Nombre" ></label>
+					<input type="text" placeholder="Nombre">
+				</p>
+				<p> <label for="Apellido" ></label>
+					<input type="text" placeholder="Apellido">
+				</p>
+				<p> <label for="Nombre de Usuario" ></label>
+					<input type="text" placeholder="Nombre de Usuario">
+				</p>
+				<p> <label for="Imagen de perfil"></label>
+					<input type="url" placeholder="URL de Imagen del perfil">
+				</p>
+				<p> <label for="Telefono"></label>
+					<input type="tel" placeholder="Telefono">
+				</p>
+				<p> <label for="Email"></label>
+					<input type="email" placeholder="Email">
+				</p>
+				<p> <label for="Contraseña"></label>
+					<input type="password" placeholder="Contraseña">
+				</p>
+				<p> <label for="Confirmar Contraseña"></label>
+					<input type="password" placeholder="Confirmar Contraseña">
+				</p>
+				<button type="submit">Crear Cuenta</button>
+				
+			</form>
 
 	<%- include('./partials/footer')  %> 
 </body>
