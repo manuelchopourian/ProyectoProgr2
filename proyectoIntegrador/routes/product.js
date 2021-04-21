@@ -3,7 +3,10 @@ let router = express.Router();
 let productController = require('../controllers/productController');
 
 
-/* GET productos listing listing. */
 router.get('/', productController.index)
+/* por id */
+
+router.get('/id/:id', productController.porId);
+
 
 module.exports = router;
