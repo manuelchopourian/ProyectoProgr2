@@ -6,4 +6,6 @@ let profileController = require('../controllers/profileController');
 /* GET productos listing listing. */
 router.get('/', profileController.index)
 
+router.get('/id/:id', profileController.porId);
+
 module.exports = router;

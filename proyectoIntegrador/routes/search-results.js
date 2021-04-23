@@ -4,6 +4,6 @@ let searchResultsController = require('../controllers/search-resultsController')
 
 
 /* GET productos listing listing. */
-router.get('/', searchResultsController.index)
+router.get('/', searchResultsController.search)
 
 module.exports = router;

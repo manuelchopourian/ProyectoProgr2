@@ -14,7 +14,7 @@
 			</div>
 			
 			<!-- Show the "ultimos" products -->
-			<% for (let i = 0; i < productos.length; i++) { %>
+			<% for (let i = 0; i < 8; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href='/product/id/<%= productos[i].id %>'>
@@ -22,7 +22,7 @@
 							<img src= "<%= productos[i].imagen %>"  alt="Camiseta Camiseta España Local">
 						</figure>
 						<article class="product-box_data">
-							<h2> <%= productos[i].producto + " " + productos[i].nombre %> </h2>
+							<h2> <%= productos[i].categoria + " " + productos[i].nombre %> </h2>
 							<p><%= productos[i].descripcion  %> </p>
 							<p> <%= productos[i].comentarios %>  Comentarios</p>
 						</article>
