@@ -7,7 +7,7 @@ let productos = [
         marca: "Adidas",
         descripcion: "LA CAMISETA DE LOCAL DE ESPAÑA, HECHA POR ADIDAS PARA LOS HINCHAS",
         imagen: "/images/products/Camiseta-Espana-Local.jpeg",
-        comentarios: 8,
+        comentarios: 4,
 
     },
 
@@ -51,7 +51,7 @@ let productos = [
         marca: "Adidas",
         descripcion: "LA CAMISETA ARGENTINA INSPIRADA EN LA UNIÓN Y LA PASIÓN POR EL FÚTBOL, CON TECNOLOGÍA AEROREADY",
         imagen: "/images/products/Camiseta-Argentina-Local.jpeg",
-        comentarios: 15,
+        comentarios: 4,
 
     },
 
@@ -62,7 +62,7 @@ let productos = [
         marca: "Adidas",
         descripcion: "LA PELOTA OFICIAL DE LA UEFA EURO2020™ SIMBOLIZA LA UNIDAD",
         imagen: "/images/products/Pelota-Uniforia.jpeg",
-        comentarios: 12,
+        comentarios: 3,
 
     },
 
@@ -73,7 +73,7 @@ let productos = [
         marca: " Adidas",
         descripcion: "UNA CAMISETA DE LOCAL PARA LOS HINCHAS INCONDICIONALES",
         imagen: "/images/products/Camiseta-River-Local.jpeg",
-        comentarios: 11,
+        comentarios: 2,
 
     },
 
@@ -84,7 +84,7 @@ let productos = [
         marca: "Adidas",
         descripcion: "LA AUTÉNTICA CAMISETA QUE USAN LOS JUGADORES EN LA BOMBONERA",
         imagen: "/images/products/Camiseta-Boca-Local.jpeg",
-        comentarios: 10,
+        comentarios: 4,
 
     },
 
