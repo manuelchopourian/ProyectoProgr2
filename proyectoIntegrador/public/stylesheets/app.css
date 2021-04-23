@@ -4,7 +4,7 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+  --yellow: #EAC926;;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -154,11 +154,11 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   height: 100px;
+  padding-top: 0,5px;
 }
 
 

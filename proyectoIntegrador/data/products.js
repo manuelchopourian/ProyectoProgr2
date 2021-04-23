@@ -3,7 +3,7 @@ let productos = [
     {
         id:0,
         producto: "Camiseta",
-        nombre: "Local españa",
+        nombre: "Local España",
         marca: "Adidas",
         descripcion: "LA CAMISETA DE LOCAL DE ESPAÑA, HECHA POR ADIDAS PARA LOS HINCHAS",
         imagen: "images/products/Camiseta-Espana-Local.jpeg",
