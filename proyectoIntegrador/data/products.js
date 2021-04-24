@@ -15,7 +15,7 @@ let productos = [
 
     {
         id:1,
-        producto: 'botiner predator terreno firme adidas negro',
+        producto: 'botines predator terreno firme adidas negro',
         categoria: "Botines",
         nombre: "Predator 20.3 Terreno Firme",
         marca: "Adidas",
@@ -45,7 +45,7 @@ let productos = [
         marca: "Adidas",
         descripcion: "PARA INCONDICIONALES DEL FÚTBOL JAPONÉS",
         imagen: "/images/products/Camiseta-Japon-Local.jpeg",
-        comentarios: 5,
+        comentarios: 1,
 
     },
 
@@ -104,7 +104,7 @@ let productos = [
         marca: "Nike",
         descripcion: "Representa a tu equipo con la camiseta del Tottenham Hotspur.",
         imagen: "/images/products/Camiseta-Local-Tottenham.jpeg",
-        comentarios: 5,
+        comentarios: 2,
 
     },
     {
@@ -115,7 +115,7 @@ let productos = [
         marca: "Nike",
         descripcion: "Combina el orgullo del club con el rendimiento deportivo.",
         imagen: "/images/products/Camiseta-Inter-Local.jpeg",
-        comentarios: 6,
+        comentarios: 3,
 
     },
     {
@@ -137,7 +137,7 @@ let productos = [
         marca: "Puma",
         descripcion: "Inspirada en la ciudad bonaerense de Avellaneda",
         imagen: "/images/products/Camiseta-Local-Independiente.jpeg",
-        comentarios: 5,
+        comentarios: 4,
 
     },
     {
@@ -169,7 +169,7 @@ let productos = [
         marca: "Puma",
         descripcion: "El conjunto titular que usan los Citizens.",
         imagen: "/images/products/Camiseta-Local-Manchester.jpeg",
-        comentarios: 5,
+        comentarios: 2,
     },
     {
         id:15,
@@ -219,7 +219,7 @@ let productos = [
         marca: "Nike",
         descripcion: "Son pura pasión y potencia.",
         imagen: "/images/products/Botines-Nike-Superfly.jpeg",
-        comentarios: 5,
+        comentarios: 4,
     },
     {
         id:20,
