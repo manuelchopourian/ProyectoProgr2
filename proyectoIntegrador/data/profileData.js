@@ -7,6 +7,7 @@ let perfiles = [
         productos: '8 productos',
         seguidores: '145 seguidores',
         comentarios: '532 comentarios',
+        fotoPerfil:'/images/profiles/hombre1.jpg'
     },
 
     {
@@ -15,7 +16,7 @@ let perfiles = [
         productos: '6 productos',
         seguidores: '232 seguidores',
         comentarios: '894 comentarios',
-
+        fotoPerfil:'/images/profiles/hombre2.jpg'
 
     },
 
@@ -25,17 +26,17 @@ let perfiles = [
         productos: '9 productos',
         seguidores: '76 seguidores',
         comentarios: '432 comentarios',
-
+        fotoPerfil:'/images/profiles/hombre3.jpeg'
 
     },
 
     {
         id:3,
         nombreUsuario: 'manuelsanchez',
-        prouctos: '5 productos',
+        productos: '5 productos',
         seguidores: '642 seguidores',
-        comentarios: 234,
-
+        comentarios: '234 comentarios',
+        fotoPerfil:'/images/profiles/hombre4.jpg'
 
     },
 
@@ -45,18 +46,18 @@ let perfiles = [
         productos: '14 productos',
         seguidores: '1230 seguidores',
         comentarios: '1670 comentarios',
+        fotoPerfil:'/images/profiles/mujer1.jpg'
 
 
     },
 
     {
         id:5,
-        nombreUsuario: 'catarodriguez',
+        nombreUsuario: 'catalinarodriguez',
         productos: '1 producto',
         seguidores: '20 seguidores',
         comentarios: '53 comentarios',
-
-
+        fotoPerfil:'/images/profiles/mujer2.jpg'
     },
 
     {
@@ -65,8 +66,7 @@ let perfiles = [
         productos: '3 productos',
         seguidores: '79 seguidores',
         comentarios: '547 comentarios',
-
-
+        fotoPerfil:'/images/profiles/mujer3.jpg'
     },
 
     {
@@ -75,6 +75,7 @@ let perfiles = [
         productos: '5 productos',
         seguidores: '323 seguidores',
         comentarios: '795 comentarios',
+        fotoPerfil:'/images/profiles/mujer4.jpg'
     },
 
 

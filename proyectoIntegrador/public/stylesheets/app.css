@@ -1,10 +1,11 @@
 /*====== Fonts ======*/
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,900&display=swap');
+
 
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;;
+  --yellow: #2a2a2b;;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -66,15 +67,23 @@ hr {
 
 
 /*====== Main Header ======*/
-.main-header {
+.main-header{
   padding: 15px 0;
   background-color: var(--yellow);
+}
+.main-header img{
+  height: 125%;
+  width: 125%;
+  position: relative;
+  right: 2vw;
 }
 
 .main-header_home-link,
 .main-header_credit-link {
   display: block;
+  color: rgb(255, 255, 255);
 }
+
 
 .main-header_credit-link {
   font-size: 1.5em;
@@ -130,6 +139,8 @@ hr {
 .left-navbar,
 .right-navbar {
   font-size: 1.5em;
+  color: rgb(255, 255, 255);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .logout{
@@ -140,7 +151,7 @@ hr {
 }
 
 .logout:hover{
-  color: #1259c3;
+  color: rgb(201, 15, 15);
 }
 
 .left-navbar a,
@@ -149,8 +160,9 @@ hr {
   padding: 5px 0;
   border-bottom: solid 1px var(--gray);
 }
-
-
+.right-navbar button{
+  color: rgb(255, 255, 255);
+}
 
 /*====== Banner ======*/
 .banner {
@@ -166,12 +178,15 @@ hr {
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .products-title {
-  font-size: 2.4em;
-  font-weight: 400;
-  color: var(--gray);
+  font-size: 2.8em;
+  color: black;
+  --base-font-family: 'Roboto', sans-serif;
+  font-style: italic;
+
 }
 
 .product-box {
@@ -199,8 +214,8 @@ hr {
 }
 
 .product-box_data h2 {
-  font-size: 2.4em;
-  font-weight: 300;
+  font-size: 2.2em;
+  font-weight: 550;
   margin: 0;
 }
 
@@ -212,13 +227,14 @@ hr {
 }
 
 .product-box_data p {
-  font-size: 11px;
+  font-size: 13px;
   width: 100%;
   color: var(--gray);
   margin: 0;
   height: 0;
   transition: 300ms;
   overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .product-box_data i {
@@ -269,7 +285,7 @@ hr {
 }
 
 .footer-data i {
-  color: var(--light-blue);
+  color: rgb(207, 5, 5);
   font-size: 3.5em;
 }
 
@@ -325,6 +341,7 @@ hr {
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .product-detail-price {
@@ -421,6 +438,10 @@ hr {
 }
 .comments .user{
   font-size: 1.7em;
+  font-weight: 50;
+}
+.comments .user a{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /*====== Formularios ======*/
@@ -452,12 +473,73 @@ textarea.form-input {
   resize: vertical;
   padding: 15px;
 }
+.registrado{
+  display: grid;
+  grid-template-rows: 7fr 1fr;
+  margin:auto
+}
+.registrado button{
+  background-color: rgb(201, 201, 201);
+  border: 2px solid black;
+}
+.datos{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 10px;
+}
+.dataRegistro input{
+  box-sizing: border-box;
+  width: 90%;
+  margin: 0 5% 0 0;
+  height: 30px;
+}
+.fotoRegistrado{
+  display: flex;
+  align-items: center;
+  border: double;
+  padding-left: 20%;
+}
+.agregarProducto{
+  margin: auto;
+  width: 30%;
+}
+.agregarProducto button{
+  width: 100%;
+  height: 30px;
+  background-color: rgb(201, 201, 201);
+  border: 2px solid black;
+}
+.agregarProducto input{
+ height: 30px;
+ width: 100%;
+}
+.infoProducto{
+  display: grid;
+  grid-template-rows: 7fr 1fr;
+}
+.iniciarSesion{
+  margin: auto;
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  width: 30%;
+}
+.iniciarSesion button{
+  height: 30px;
+  border: 2px solid black;
+  background-color: rgb(201, 201, 201);
+}
+.datosInicio input{
+  width: 100%;
+  height: 30px;
+}
 
 /*====== Profile ======*/
 .info-usuario{
   border-bottom: 1px solid #ccc;
   padding-bottom: 30px;
   font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 50;
 }
 
 .foto-perfil{
@@ -470,7 +552,7 @@ textarea.form-input {
 }
 
 .btn{
-  background-color: #1259c3;
+  background-color: #bd0d0d;
   padding: 10px 20px;
   border-radius: 4px;
   color: #fff;
@@ -482,6 +564,7 @@ textarea.form-input {
   .main-header_credit-link {
     margin-top: 0;
     text-align: right;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 
   .banner {
@@ -508,7 +591,7 @@ textarea.form-input {
 
   .left-navbar a:hover,
   .right-navbar a:hover {
-    color: var(--light-blue);
+    color: rgb(201, 15, 15);
   }
 
   .left-navbar li {
