@@ -21,7 +21,7 @@ let productos = [
         marca: "Adidas",
         descripcion: "BOTINES PARA DOMINAR LAS CANCHAS DE TERRENO FIRME",
         imagen: "/images/products/Botines-Predator-Negros.jpg",
-        comentarios: 3,
+        comentarios: 6,
 
     },
 
@@ -81,7 +81,7 @@ let productos = [
         marca: " Adidas",
         descripcion: "UNA CAMISETA DE LOCAL PARA LOS HINCHAS INCONDICIONALES",
         imagen: "/images/products/Camiseta-River-Local.jpeg",
-        comentarios: 2,
+        comentarios: 7,
 
     },
 
@@ -93,7 +93,7 @@ let productos = [
         marca: "Adidas",
         descripcion: "LA AUTÉNTICA CAMISETA QUE USAN LOS JUGADORES",
         imagen: "/images/products/Camiseta-Boca-Local.jpeg",
-        comentarios: 4,
+        comentarios: 8,
 
     },
     {

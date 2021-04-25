@@ -8,7 +8,7 @@ let perfiles = [
         seguidores: '145 seguidores',
         comentarios: '532 comentarios',
         fotoPerfil:'/images/profiles/hombre1.jpg',
-        comentario:'Muy buen producto, especilmente la calidad , a mis hijos les encanto'
+        comentario:'Muy buen producto, especialmente la calidad , a mis hijos les encanto'
     },
 
     {
@@ -18,7 +18,7 @@ let perfiles = [
         seguidores: '232 seguidores',
         comentarios: '894 comentarios',
         fotoPerfil:'/images/profiles/hombre2.jpg',
-        comentario:'Tremenda camiseta para los fanaticos de la premier, la calidad del material es impresinante, ademas muy lindos colores'
+        comentario:'La calidad del material es impresionante, ademas muy lindos colores'
 
     },
 
@@ -29,7 +29,7 @@ let perfiles = [
         seguidores: '76 seguidores',
         comentarios: '432 comentarios',
         fotoPerfil:'/images/profiles/hombre3.jpeg',
-        comentario: 'Los botines no me gustaron mucho , un poco incomodos y muy pesados'
+        comentario: 'No me gusto mucho, no era lo que esperaba '
 
     },
 
@@ -40,7 +40,7 @@ let perfiles = [
         seguidores: '642 seguidores',
         comentarios: '234 comentarios',
         fotoPerfil:'/images/profiles/hombre4.jpg',
-        comentario:'Que fea pelota , por dios , los colores son horribles'
+        comentario:'Que feo, por dios , los colores son horribles'
 
     },
 
@@ -51,7 +51,7 @@ let perfiles = [
         seguidores: '1230 seguidores',
         comentarios: '1670 comentarios',
         fotoPerfil:'/images/profiles/mujer1.jpg',
-        comentario:'malos'
+        comentario:'Increible atencion y mejor producto. Lo recomiendo!'
 
 
     },
@@ -63,7 +63,7 @@ let perfiles = [
         seguidores: '20 seguidores',
         comentarios: '53 comentarios',
         fotoPerfil:'/images/profiles/mujer2.jpg',
-        comentario:'tremendo'
+        comentario:'No era lo que me esperaba'
     },
 
     {
@@ -73,7 +73,7 @@ let perfiles = [
         seguidores: '79 seguidores',
         comentarios: '547 comentarios',
         fotoPerfil:'/images/profiles/mujer3.jpg',
-        comentario:'muy bueno'
+        comentario:'Me llego el producto defectuoso. Igualmente me lo cambiaron al instante'
     },
 
     {
@@ -83,7 +83,7 @@ let perfiles = [
         seguidores: '323 seguidores',
         comentarios: '795 comentarios',
         fotoPerfil:'/images/profiles/mujer4.jpg',
-        comentario:'bueno'
+        comentario:'Hermosos colores!'
     },
 
 
