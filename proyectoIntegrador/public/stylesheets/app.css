@@ -312,6 +312,15 @@ hr {
   padding: 15px 0;
 }
 
+.nombres{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 15px;
+  text-align: center;
+
+}
+
+
 
 /*====== Product Detail ======*/
 .product-detail {
