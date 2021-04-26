@@ -6,6 +6,7 @@ create table users (
 id int primary key auto_increment,
 nombre varchar (100) not null,
 apellido varchar(200) not null,
+edad int not null,
 nombre_usuario varchar(200) unique, 
 email varchar(200) not null unique,
 password varchar(250) not null,
@@ -14,6 +15,10 @@ url_imagen_usuario varchar(300) not null,
 telefono varchar(13)
 
 );
+
+Select edad
+from users
+where edad > 17; 
 
 create table products(
 
