@@ -1,4 +1,5 @@
 
+
 let  productos = require("../data/products")
 
 let indexController = {
@@ -14,3 +15,4 @@ let indexController = {
  
  module.exports = indexController;
 
+ 

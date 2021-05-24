@@ -1,8 +1,27 @@
-let alias = 'Coments';
 
+module.exports = (sequelize, dataTypes)=>{
+
+let alias = 'Coments';
 let cols = {
 
-    datatypes : Agregar
+    id: {
+        autoIncrement: true,
+        primaryKey: true,
+        type: dataTypes.INTEGER
+    },
+    comentario:{
+        type: dataTypes.STRING
+    },
+    fecha_posteo:{
+        type: dataTypes.DATE
+    },
+    user_id:{
+        type: dataTypes.INTEGER
+    },
+    product_id:{
+        type: dataTypes.INTEGER
+    },
+
 };
 
 let config = {
@@ -11,4 +30,5 @@ underscored : true
 };
 
 const Coments = sequelize.define(alias, cols , config);
-return Coments
+return Coments;
+ }

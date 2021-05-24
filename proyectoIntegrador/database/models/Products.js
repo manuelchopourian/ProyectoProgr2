@@ -1,8 +1,28 @@
-let alias = 'Products';
+module.exports = (sequelize, dataTypes)=>{
 
+let alias = 'Products';
 let cols = {
 
-    datatypes : Agregar
+    id: {
+        autoIncrement: true,
+        primaryKey: true,
+        type: dataTypes.INTEGER
+    },
+    nombre_producto:{
+
+        type: dataTypes.STRING
+    },
+    url_imagen_producto:{
+
+        type: dataTypes.STRING
+    },
+    fecha_publicacion:{
+
+        type: dataTypes.DATE
+    },
+    user_id :{
+        type: dataTypes.INTEGER
+    },
 };
 
 let config = {
@@ -11,4 +31,5 @@ underscored : true
 };
 
 const Products = sequelize.define(alias, cols , config);
-return Products
+return Products;
+ }
