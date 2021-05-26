@@ -2,7 +2,7 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= producto.categoria + " "+producto.marca +" " + producto.nombre %> </h2> 
+			<h2 class="products-title"><%= producto.categoria + " "+ producto.marca +" " + producto.nombre %> </h2> 
 			<p class="product-detail-description">
 				<a href='/product-add'>Editar</a>
 			</p>
@@ -10,22 +10,22 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= producto.imagen %> " alt="" class="product-detail-img">
+					<img src="<%= producto.url_imagen_producto %> " alt="" class="product-detail-img">
 					<p class="product-detail-description"><%= producto.descripcion %>  </p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<% for (let i = 0; i < producto.comentarios; i++) { %>
-								<article>
-									<img src=<%= perfiles[i].fotoPerfil %>  alt="">
-									<div class="data">
-										<p class="user">
-										<strong> <a href='/profile/id/<%= perfiles[i].id %>  '><%= perfiles[i].nombreUsuario %>:  </a> </strong>
-										 <%= perfiles[i].comentario  %> </p>
-									</div>
-									</a>
-								</article>
-							<%  } %> 
+							<article>
+								<img src=<%= perfiles[i].fotoPerfil %>  alt="">
+								<div class="data">
+									<p class="user">
+									<strong> <a href='/profile/id/<%= perfiles[i].id %>  '><%= perfiles[i].nombreUsuario %>:  </a> </strong>
+									 <%= perfiles[i].comentario  %> </p>
+								</div>
+								</a>
+							</article>
+						<%  } %> 
 					</section>
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">

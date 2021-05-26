@@ -1,15 +1,19 @@
 let  productos = require("../data/products")
 let  perfiles = require('../data/profileData')
 
+const db = require('../database/models');
+
 let productController = {
 
   index : (req, res) => { 
-  res.render('product', {productos : productos},); 
+  res.render('product', {producto : producto},); 
   },
-  
-  porId: (req,res) =>{
-    res.render('product',{producto : productos[req.params.id], perfiles  });
-    },
+
+  porId: (req, res)=>{
+    db.Product.findByPk(req.params.id)
+        .then(producto => res.render('product', {producto, perfiles}))
+        .catch( err => console.log(err))
+  },
 
     
   show : (req, res) => { 
@@ -21,7 +25,7 @@ let productController = {
     },
      
      
-       }
+}
     
  module.exports = productController;
 

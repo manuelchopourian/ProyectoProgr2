@@ -1,8 +1,9 @@
+let  producto = require("../data/products");
 const db = require('../database/models');
 
 let indexController = {
 
-    index: (req, res) => { 
+    index : (req, res) => { 
       db.Product.findAll()
         .then(productos => {
           res.render('index',{productos})
@@ -16,10 +17,10 @@ let indexController = {
     search: function (req,res, next){
 
       let result = []
-      for(let i=0; i < productos.length; i++) { 
+      for(let i=0; i < producto.length; i++) { 
 
-        if(productos[i].producto.includes(req.query.search.toLowerCase())){
-          result.push(productos[i])
+        if(producto[i].producto.includes(req.query.search.toLowerCase())){
+          result.push(producto[i])
         }
       };
         res.render('search-results', {
