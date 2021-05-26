@@ -1,7 +1,7 @@
 let productos = [
  
     {
-        id:0,
+        id:1,
         producto: "camiseta local españa rojo",
         categoria: 'Camiseta',
         nombre: "Local España",
@@ -14,7 +14,7 @@ let productos = [
     },
 
     {
-        id:1,
+        id:2,
         producto: 'botines predator terreno firme adidas negro',
         categoria: "Botines",
         nombre: "Predator 20.3 Terreno Firme",
@@ -26,7 +26,7 @@ let productos = [
     },
 
     {
-        id:2,
+        id:3,
         producto: 'guantes predator adidas rojo y negro ',
         categoria: "Guantes",
         nombre: "Predator 20 Match Fingersave",
@@ -38,7 +38,7 @@ let productos = [
     },
 
     {
-        id:3,
+        id:4,
         producto: 'camiseta japon azul adidas',
         categoria: "Camiseta",
         nombre: "Primera Equipacion Japon",
@@ -50,7 +50,7 @@ let productos = [
     },
 
     {
-        id:4,
+        id:5,
         producto: 'camiseta local seleccion argentina celeste y blanca adidas',
         categoria: "Camiseta",
         nombre: "Local Seleccion Argentina",
@@ -62,7 +62,7 @@ let productos = [
     },
 
     {
-        id:5,
+        id:6,
         producto: 'pelota uniforia blanca uefa europa league 2020 adidas',
         categoria: "Pelota",
         nombre: "Futbol Uniforia Pro",
@@ -74,7 +74,7 @@ let productos = [
     },
 
     {
-        id:6,
+        id:7,
         producto: 'camiseta local river plate rojo y blanco adidas',
         categoria: "Camiseta ",
         nombre: "Local River Plate",
@@ -86,7 +86,7 @@ let productos = [
     },
 
     {
-        id:7,
+        id:8,
         producto: 'camiseta local boca juniors azul y oro adidas',
         categoria: "Camiseta",
         nombre: "Local Boca Juniors",
@@ -97,7 +97,7 @@ let productos = [
 
     },
     {
-        id:8,
+        id:9,
         producto: 'camiseta local tottenham blanca nike',
         categoria: "Camiseta",
         nombre: "Local Tottenham",
@@ -108,7 +108,7 @@ let productos = [
 
     },
     {
-        id:9,
+        id:10,
         producto: 'camiseta local inter de milan azul negro nike',
         categoria: "Camiseta",
         nombre: "Local Inter de Milan",
@@ -119,7 +119,7 @@ let productos = [
 
     },
     {
-        id:10,
+        id:11,
         producto: 'camiseta local liverpool roja nike',
         categoria: "Camiseta",
         nombre: "Local Liverpool",
@@ -130,7 +130,7 @@ let productos = [
 
     },
     {
-        id:11,
+        id:12,
         producto: 'camiseta local independiente rojo puma',
         categoria: "Camiseta",
         nombre: "Local Independiente",
@@ -141,7 +141,7 @@ let productos = [
 
     },
     {
-        id:12,
+        id:13,
         producto: 'camiseta local chelsea azul nike',
         categoria: "Camiseta",
         nombre: "Local Chelsea",
@@ -152,7 +152,7 @@ let productos = [
 
     },
     {
-        id:13,
+        id:14,
         producto: 'camiseta local barcelona azul y roja nike',
         categoria: "Camiseta",
         nombre: "Local Barcelona",
@@ -162,7 +162,7 @@ let productos = [
         comentarios: 3,
     },
     {
-        id:14,
+        id:15,
         producto: 'camiseta local manchester city celeste puma',
         categoria: "Camiseta",
         nombre: "Local Manchester City",
@@ -172,7 +172,7 @@ let productos = [
         comentarios: 2,
     },
     {
-        id:15,
+        id:16,
         producto: 'botines copa adidas azules',
         categoria: "Botines",
         nombre: "Copa 20.1 Terreno Firme",
@@ -182,7 +182,7 @@ let productos = [
         comentarios: 1,
     },
     {
-        id:16,
+        id:17,
         producto: 'botines predator mutator adidas negro oro blanco',
         categoria: "Botines",
         nombre: "Predator Mutator 20.1 Terreno Firme",
@@ -192,7 +192,7 @@ let productos = [
         comentarios: 2,
     },
     {
-        id:17,
+        id:18,
         producto: 'pelota final estambul uefa champions league',
         categoria: "Pelota",
         nombre: "Final UCL Estambul",
@@ -202,7 +202,7 @@ let productos = [
         comentarios: 3,
     },
     {
-        id:18,
+        id:19,
         producto: 'botines nike phantom naranja negro ',
         categoria: "Botines",
         nombre: "Nike Phantom Vision Academy Df Tf",
@@ -212,7 +212,7 @@ let productos = [
         comentarios: 4,
     },
     {
-        id:19,
+        id:20,
         producto: 'botines nike superfly negro ',
         categoria: "Botines",
         nombre: "Nike Mercurial Superfly 7 Pro FG",
@@ -222,7 +222,7 @@ let productos = [
         comentarios: 4,
     },
     {
-        id:20,
+        id:21,
         producto: 'botines nike mercurial naranja ',
         categoria: "Botines",
         nombre: "Nike Mercurial Vapor 13",

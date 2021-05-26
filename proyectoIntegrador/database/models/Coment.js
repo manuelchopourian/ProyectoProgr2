@@ -1,7 +1,7 @@
 
 module.exports = (sequelize, dataTypes)=>{
 
-let alias = 'Coments';
+let alias = 'Coment';
 let cols = {
 
     id: {
@@ -25,10 +25,10 @@ let cols = {
 };
 
 let config = {
-tablename : 'coments',
-underscored : true
+    tablename : 'coments',
+    underscored : true,
 };
 
 const Coments = sequelize.define(alias, cols , config);
-return Coments;
- }
+    return Coments;
+}

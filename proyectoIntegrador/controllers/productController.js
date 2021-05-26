@@ -7,7 +7,6 @@ let productController = {
   res.render('product', {productos : productos},); 
   },
   
-  
   porId: (req,res) =>{
     res.render('product',{producto : productos[req.params.id], perfiles  });
     },

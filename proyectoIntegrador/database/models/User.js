@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes)=>{
 
-let alias = 'Users';
+let alias = 'User';
 let cols = {
 
     id: {
@@ -43,7 +43,7 @@ let cols = {
 };
 
 let config = {
-tablename : 'Users',
+tablename : 'users',
 underscored : true
 };
 

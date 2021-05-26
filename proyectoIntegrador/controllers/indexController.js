@@ -1,11 +1,17 @@
-let  productos = require("../data/products")
+const db = require('../database/models');
 
 let indexController = {
 
-    index : (req, res) => { 
-     res.render('index', {productos: productos }); 
-    
-    },
+    index: (req, res) => { 
+      db.Product.findAll()
+        .then(productos => {
+          res.render('index',{productos})
+        })
+        .catch(err => {
+            console.log(err)
+            res.render('error',{error: err})
+        })
+      },
     
     search: function (req,res, next){
 
@@ -32,5 +38,7 @@ let indexController = {
    }
  
  module.exports = indexController;
+
+ 
 
  
