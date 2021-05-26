@@ -13,6 +13,15 @@ let profileController = {
     res.render('profile',{perfiles : perfiles[req.params.id], productos })
 
   },
+
+  show : (req, res) => { 
+    res.render('profile-edit', {perfiles: perfiles}); 
+   },
+
+  editId: (req,res) =>{
+
+    res.render('profile-edit',{perfiles : perfiles[req.params.id], productos })
+   },
 }
  
  module.exports = profileController;

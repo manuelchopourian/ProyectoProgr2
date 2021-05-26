@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let searchResultsController = require('../controllers/search-resultsController');
+let searchResultsController = require('../controllers/indexController');
 
 
 /* GET productos listing listing. */

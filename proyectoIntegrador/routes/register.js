@@ -1,9 +1,9 @@
 let express = require('express');
 let router = express.Router();
-let registerController = require('../controllers/registerController');
+let registerController = require('../controllers/indexController');
 
 
 /* GET productos listing listing. */
-router.get('/', registerController.index)
+router.get('/', registerController.register)
 
 module.exports = router;

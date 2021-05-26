@@ -7,7 +7,7 @@ id int primary key auto_increment,
 nombre varchar (100) not null,
 apellido varchar(200) not null,
 edad int not null,
-nombre_usuario varchar(200) unique, 
+nombre_usuario varchar(200) not null unique, 
 email varchar(200) not null unique,
 password varchar(250) not null,
 fecha_nacimiento date not null,
@@ -21,7 +21,6 @@ from users
 where edad > 17; 
 
 create table products(
-
 id int primary key auto_increment,
 nombre_porducto varchar(300) not null,
 url_imagen_producto varchar(300) not null,
