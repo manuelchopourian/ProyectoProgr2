@@ -15,20 +15,6 @@ let indexController = {
             res.render('error',{error: err})
         })
       },
-    
-  //   search: function (req,res, next){
-
-  //     let result = []
-  //     for(let i=0; i < producto.length; i++) { 
-
-  //       if(producto[i].producto.includes(req.query.search.toLowerCase())){
-  //         result.push(producto[i])
-  //       }
-  //     };
-  //       res.render('search-results', {
-  //         productos: result
-  //   })
-  //  },
 
   search: (req, res)=>{
     db.Product.findAll({
