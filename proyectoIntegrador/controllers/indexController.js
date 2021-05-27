@@ -1,5 +1,3 @@
-// let  producto = require("../data/products");
-
 const db = require('../database/models');
 const op = db.Sequelize.Op;
 
@@ -20,14 +18,28 @@ let indexController = {
             res.render('error',{error: err})
         })
       },
+      
 
   search: (req, res)=>{
     db.Product.findAll({
-        where: [
-            { producto: {[op.like]: `%${req.query.search}%`}}
-        ]
+        where: {
+          [op.or]:{ 
+            nombre: {[op.like]: `%${req.query.search}%`},
+            descripcion: {[op.like]: `%${req.query.search}%`},
+            categoria: {[op.like]: `%${req.query.search}%`},
+            marca: {[op.like]: `%${req.query.search}%`},
+          }
+        }
     })
-        .then(productos => res.render('search-results', { productos }))
+        .then(productos => {
+          if(productos.length != 0){
+            res.render('search-results', {title:'Resultados de busqueda', productos })
+          }
+          else{
+          res.render('search-results', { title: 'No hay resultados para su criterio de búsqueda', productos})
+          }
+        })
+
         .catch(err=> console.log(err))
     
   },

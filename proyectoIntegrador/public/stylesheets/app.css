@@ -203,7 +203,9 @@ hr {
 
 .product-box_image {
   border-bottom: 1px solid var(--light-gray);
-  height: 100%;
+}
+.product-box img{
+  height: 32vh;
 }
 
 .product-box_data {
