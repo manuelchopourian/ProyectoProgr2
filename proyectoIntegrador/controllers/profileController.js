@@ -22,6 +22,14 @@ let profileController = {
 
     res.render('profile-edit',{perfiles : perfiles[req.params.id], productos })
    },
+
+   login : (req, res) => { 
+    res.render('login'); 
+  },
+
+  register : (req, res) => { 
+    res.render('register'); 
+  }
 }
  
  module.exports = profileController;

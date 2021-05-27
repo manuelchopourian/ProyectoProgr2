@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let loginController = require('../controllers/indexController');
+let loginController = require('../controllers/profileController');
 
 
 /* GET productos listing listing. */
