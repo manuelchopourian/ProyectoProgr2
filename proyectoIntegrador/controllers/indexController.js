@@ -30,7 +30,13 @@ let indexController = {
         .then(productos => res.render('search-results', { productos }))
         .catch(err=> console.log(err))
     
-},
+  },
+  login : (req, res) => { 
+    res.render('login'); 
+  },
+  register : (req, res) => { 
+    res.render('register'); 
+  }
 
 
    }
