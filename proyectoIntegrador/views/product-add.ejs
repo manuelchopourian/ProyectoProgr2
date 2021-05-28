@@ -9,21 +9,19 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<div class="agregarProducto">
-			<form class="" action="" method="POST">
-				<div class="infoProduct">
-				<p> <label for="nombre" ></label>
-					<input type="text" placeholder="Nombre">
+			<form class="infoProduct" action="/product/add" method="POST">
+				<p>
+					<input type="text" placeholder="Nombre del Producto" name="nombre">
 				</p>
-				<p> <label for="Imagen"></label>
-					<input type="text" placeholder="Insertar URL de imagen">
+				<p>
+					<input type="text" placeholder="Insertar URL de imagen" name="url_imagen_producto">
 				</p>
-				<p> <label for="Telefono"></label>
-					<input type="tel" placeholder="Telefono">
+				<p> 
+					<input type="text" placeholder="Marca" name="marca">
 				</p>
-				<p> <label for="Fecha De Creacion"></label>
-					<input type="date" placeholder="Fecha de Creacion">
+				<p> 
+					<input type="text" placeholder="Descripcion del Producto" name="descripcion" >
 				</p>
-				</div>
 
 				<button type="submit">Publicar</button>
 				

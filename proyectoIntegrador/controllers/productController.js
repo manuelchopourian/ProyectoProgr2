@@ -1,28 +1,32 @@
-let  productos = require("../data/products")
 let  perfiles = require('../data/profileData')
 
 const db = require('../database/models');
 
 let productController = {
 
-  index : (req, res) => { 
-  res.render('product', {producto : producto},); 
-  },
 
   porId: (req, res)=>{
     db.Product.findByPk(req.params.id)
         .then(producto => res.render('product', {producto, perfiles}))
-        .catch( err => console.log(err))
+        .catch(err => console.log(err))
   },
 
     
-  show : (req, res) => { 
+  add : (req, res) => { 
     res.render('product-add', {perfiles: perfiles}); 
     },
-    
-  addId: (req,res) =>{
-    res.render('product-add',{perfiles : perfiles[req.params.id], productos })
-    },
+  
+  store: (req,res) => {
+    let productos = {
+    nombre: req.body.nombre,
+    url_imagen_producto: req.body.url_imagen_producto,
+    marca: req.body.marca,
+    descripcion: req.body.descripcion,
+  }
+  db.Product.create(productos)
+    .then(()=> res.redirect('/'))
+    .catch(err => console.log(err))
+  },
      
      
 }

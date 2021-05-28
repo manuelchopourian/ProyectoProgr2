@@ -1,22 +1,23 @@
 const db = require('../database/models');
 const op = db.Sequelize.Op;
 
-let indexController = {
 
+let indexController = {
     index : (req, res) => { 
       db.Product.findAll({
         order:[
-          ['fecha_publicacion','DESC']
+          ['fecha_publicacion','DESC'],
         ],
-        limit:4,
       })
         .then(productos => {
           res.render('index',{productos})
+          
         })
         .catch(err => {
             console.log(err)
             res.render('error',{error: err})
         })
+        
       },
       
 
@@ -36,7 +37,7 @@ let indexController = {
             res.render('search-results', {title:'Resultados de busqueda', productos })
           }
           else{
-          res.render('search-results', { title: 'No hay resultados para su criterio de búsqueda', productos})
+          res.render('search-results', {title: 'No hay resultados para su criterio de búsqueda', productos})
           }
         })
 

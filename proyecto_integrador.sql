@@ -14,10 +14,10 @@ telefono varchar(13)
 
 create table products(
 id int primary key auto_increment,
-producto varchar(300) not null,
+producto varchar(300),
 url_imagen_producto varchar(300) not null,
-fecha_publicacion date not null,
-user_id int not null,
+fecha_publicacion date,
+user_id int,
 foreign key (user_id) references users(id)
 );
 
