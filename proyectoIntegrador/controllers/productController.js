@@ -1,12 +1,10 @@
-
 let  perfiles = require('../data/profileData')
-
 const db = require('../database/models');
 
 let productController = {
 
 
-  porId: (req, res)=>{
+  index: (req, res)=>{
     db.Product.findByPk(req.params.id)
         .then(producto => res.render('product', {producto, perfiles}))
         .catch(err => console.log(err))
@@ -23,13 +21,41 @@ let productController = {
     url_imagen_producto: req.body.url_imagen_producto,
     marca: req.body.marca,
     descripcion: req.body.descripcion,
-  }
-  db.Product.create(productos)
+    }
+      db.Product.create(productos)
+      .then(()=> res.redirect('/'))
+      .catch(err => console.log(err))
+  },
+  destroy:(req,res) =>{
+    db.Product.destroy({
+      where:{
+        id:req.params.id
+      }
+    })
     .then(()=> res.redirect('/'))
     .catch(err => console.log(err))
   },
-     
-     
+  
+
+  edit:(req,res) =>{
+    db.Product.findByPk(req.params.id)
+    .then((productos)=> res.render('product-edit',{productos, perfiles}))
+    .catch(err => console.log(err))
+  },
+  update:(req,res) =>{
+    let productoActualizado = req.body
+    db.Product.update(
+      productoActualizado, 
+      {
+      where:{
+        id:req.params.id
+
+      }
+    })
+    .then(()=> res.redirect('/'))
+    .catch(err => console.log(err))
+  },
+
 }
     
  module.exports = productController;

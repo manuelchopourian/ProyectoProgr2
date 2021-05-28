@@ -1,0 +1,30 @@
+<%- include('./partials/headerLogueado')  %>
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Editar productos</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<div class="agregarProducto">
+			<form class="infoProduct" action="/product/edit/<%= productos.id %> " method="POST">
+				<p>
+					<input type="text" placeholder="Nombre del Producto" name="nombre" value="<%= productos.nombre  %> ">
+				</p>
+				<p>
+					<input type="text" placeholder="Insertar Nueva URL de imagen" name="url_imagen_producto" value="<%= productos.url_imagen_producto  %>">
+				</p>
+				<p> 
+					<input type="text" placeholder="Marca" name="marca" value="<%= productos.marca  %>">
+				</p>
+				<p> 
+					<input type="text" placeholder="Descripcion del Producto" name="descripcion" value="<%= productos.descripcion %>">
+				</p>
+
+				<button type="submit">Guardar</button>
+				
+			</form>
+			</div>
+
+	<%- include('./partials/footer')  %> 

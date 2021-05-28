@@ -50,7 +50,7 @@ ALTER TABLE products ADD categoria VARCHAR(100);
 ALTER TABLE products ADD nombre VARCHAR(100) NOT NULL;
 ALTER TABLE products ADD marca VARCHAR(100);
 ALTER TABLE products ADD descripcion VARCHAR(100);
-ALTER TABLE products ADD comentarios INT;
+ALTER TABLE products ADD comentarios INT NULL DEFAULT 0 ;;
 
 INSERT INTO `products` (`id`,`producto`,`url_imagen_producto`,`fecha_publicacion`,`user_id`,`categoria`,`nombre`,`marca`,`descripcion`,`comentarios`) VALUES (1,'camiseta local españa rojo','/images/products/Camiseta-Espana-Local.jpeg','2021-09-21',4,'Camiseta','Local España','Adidas','LA CAMISETA DE LOCAL DE ESPAÑA, HECHA PARA LOS HINCHAS',4);
 INSERT INTO `products` (`id`,`producto`,`url_imagen_producto`,`fecha_publicacion`,`user_id`,`categoria`,`nombre`,`marca`,`descripcion`,`comentarios`) VALUES (2,'botines predator terreno firme adidas negro','/images/products/Botines-Predator-Negros.jpg','2020-08-24',5,'Botines','Predator 20.3 Terreno Firme','Adidas','BOTINES PARA DOMINAR LAS CANCHAS DE TERRENO FIRME',6);

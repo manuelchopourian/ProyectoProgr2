@@ -8,6 +8,7 @@ let indexController = {
         order:[
           ['fecha_publicacion','DESC'],
         ],
+        limit:8
       })
         .then(productos => {
           res.render('index',{productos})
@@ -23,13 +24,17 @@ let indexController = {
 
   search: (req, res)=>{
     db.Product.findAll({
+        order:[
+          ['comentarios','DESC'],
+        ],
         where: {
           [op.or]:{ 
             nombre: {[op.like]: `%${req.query.search}%`},
             descripcion: {[op.like]: `%${req.query.search}%`},
             categoria: {[op.like]: `%${req.query.search}%`},
             marca: {[op.like]: `%${req.query.search}%`},
-          }
+          },
+          
         }
     })
         .then(productos => {

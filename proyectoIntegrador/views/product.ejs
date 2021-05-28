@@ -2,16 +2,27 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= producto.categoria + " "+ producto.marca +" " + producto.nombre %> </h2> 
+			<h2 class="products-title">
+				<% if(producto.categoria == null){ %> 
+					 <%=producto.nombre%>
+				<% } else{ %> 
+					<%=producto.categoria + " " + producto.nombre%>
+					<% } %> 
+
+			</h2>
 			<p class="product-detail-description">
-				<a href='/product/add'>Editar</a>
+				<a href='/product/edit/<%= producto.id %>'>Editar Posteo</a> 
 			</p>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= producto.url_imagen_producto %> " alt="" class="product-detail-img">
+					<img src="<%= producto.url_imagen_producto %> " alt="<%= producto.productos%>" class="product-detail-img">
 					<p class="product-detail-description"><%= producto.descripcion %>  </p>
+					
+					<form action="/product/id/<%= producto.id %>" style="display: inline;" method="POST">
+						<button type="submit">Borrar Posteo</button>
+					</form>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
