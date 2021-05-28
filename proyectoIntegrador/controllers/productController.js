@@ -1,5 +1,5 @@
-let  productos = require("../data/products")
-let  perfiles = require('../data/profileData')
+let  productos = require("/data/products")
+let  perfiles = require('/data/profileData')
 
 const db = require('../database/models');
 
