@@ -195,6 +195,7 @@ hr {
   overflow: hidden;
   transition: 300ms;
   margin: 20px 0;
+  height: 42vh;
 }
 
 .product-box a {
@@ -219,7 +220,7 @@ hr {
 .product-box_data h2 {
   font-size: 2.2em;
   font-weight: 550;
-  margin: 0;
+  margin: auto;
 }
 
 .product-box_data span {
@@ -264,6 +265,7 @@ hr {
 
 .product-box:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  height: auto;
 }
 
 .product-box:hover p {

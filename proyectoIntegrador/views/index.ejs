@@ -22,7 +22,14 @@
 							<img src= "<%= productos[i].url_imagen_producto %>"  alt='<%= productos[i].producto%> '>
 						</figure>
 						<article class="product-box_data">
-							<h2> <%= productos[i].categoria + " " + productos[i].nombre %> </h2>
+							<h2>
+								<% if(productos[i].categoria == null){ %> 
+									 <%=productos[i].nombre%>
+								<% } else{ %> 
+									<%=productos[i].categoria + " " + productos[i].nombre%>
+									<% } %> 
+
+							</h2>
 							<p><%= productos[i].descripcion  %> </p>
 							<p> <%= productos[i].comentarios %>  Comentarios</p>
 						</article>
@@ -38,7 +45,6 @@
 			<div class="col-12">
 				<h2 class="products-title">Mas Comentados</h2>
 			</div>
-
 			<!-- Show the "ultimos" products -->
 			
 		</div>

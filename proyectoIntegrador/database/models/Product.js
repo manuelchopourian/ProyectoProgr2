@@ -9,15 +9,12 @@ let cols = {
         type: dataTypes.INTEGER
     },
     producto:{
-
         type: dataTypes.STRING
     },
     url_imagen_producto:{
-
         type: dataTypes.STRING
     },
     fecha_publicacion:{
-
         type: dataTypes.DATE
     },
     user_id :{
@@ -48,4 +45,6 @@ underscored : true,
 
 const Products = sequelize.define(alias, cols , config);
 return Products;
+
+
  }
