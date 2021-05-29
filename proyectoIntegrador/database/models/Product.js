@@ -9,7 +9,8 @@ let cols = {
         type: dataTypes.INTEGER
     },
     producto:{
-        type: dataTypes.STRING
+        type: dataTypes.STRING,
+        allowNull: true,
     },
     url_imagen_producto:{
         type: dataTypes.STRING
@@ -21,20 +22,27 @@ let cols = {
         type: dataTypes.INTEGER
     },
     categoria:{
-        type: dataTypes.STRING
+        type: dataTypes.STRING,
+        allowNull: true,
     },
     nombre:{
         type: dataTypes.STRING
     },
     marca:{
-        type: dataTypes.STRING
+        type: dataTypes.STRING,
+        allowNull: true,
     },
     descripcion:{
-        type: dataTypes.STRING
+        type: dataTypes.STRING,
+        allowNull: true,
     },
     comentarios:{
-        type: dataTypes.INTEGER
-    }
+        type: dataTypes.INTEGER,
+        allowNull: true,
+    },
+    updated_at:{
+        type: dataTypes.DATE
+    },
 };
 
 let config = {

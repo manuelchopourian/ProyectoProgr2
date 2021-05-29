@@ -32,12 +32,20 @@ let cols = {
     },
     url_imagen: {
         type: dataTypes.STRING,
+        allowNull: true,
         
     },
     telefono: {
         type: dataTypes.INTEGER,
+        allowNull: true,
         
-    }
+    },
+    created_at:{
+        type: dataTypes.DATE
+    },
+    updated_at:{
+        type: dataTypes.DATE
+    },
 
 
 };

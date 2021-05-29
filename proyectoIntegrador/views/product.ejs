@@ -10,9 +10,13 @@
 					<% } %> 
 
 			</h2>
-			<p class="product-detail-description">
-				<a href='/product/edit/<%= producto.id %>'>Editar Posteo</a> 
+			<p class="product-detail-a">
+				<a href='/product/edit/<%= producto.id %>'>Editar Posteo</a>  
+				
 			</p>
+			<form action="/product/id/<%= producto.id %>" style="display: inline;" method="POST">
+				<button type="submit" class="borrado">Borrar Posteo</button>
+			</form>
 		</div>
 		<div class="product-detail">
 			<div class="row">
@@ -20,9 +24,7 @@
 					<img src="<%= producto.url_imagen_producto %> " alt="<%= producto.productos%>" class="product-detail-img">
 					<p class="product-detail-description"><%= producto.descripcion %>  </p>
 					
-					<form action="/product/id/<%= producto.id %>" style="display: inline;" method="POST">
-						<button type="submit">Borrar Posteo</button>
-					</form>
+					
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">

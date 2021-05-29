@@ -8,7 +8,7 @@ let indexController = {
         order:[
           ['fecha_publicacion','DESC'],
         ],
-        limit:8
+        limit:4
       })
         .then(productos => {
           res.render('index',{productos})
