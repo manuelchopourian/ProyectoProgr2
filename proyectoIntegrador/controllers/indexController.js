@@ -1,5 +1,6 @@
 let db = require('../database/models');
 const op = db.Sequelize.Op;
+let  perfiles = require('../data/profileData')
 
 
 let indexController = {
@@ -53,7 +54,24 @@ let indexController = {
     res.render('login'); 
   },
   register : (req, res) => { 
-    res.render('register'); 
+    res.render('register' ,  {perfiles: perfiles}); 
+  },
+
+  registerstore : (req, res) => {
+
+      let usuarios = {
+      nombre: req.body.nombre,
+      apellido: req.body.apellido,
+      nombre_usuario: req.body.nombre_usuario,
+      telefono: req.body.telefono,
+      email: req.body.email,
+      contrasena: req.body.contrasena,
+      url_imagen_usuario: req.body.url_imagen_usuario,
+      
+      }
+        db.User.create(usuarios)
+        .then(()=> res.redirect('/'))
+        .catch(err => console.log(err))
   }
 
 
