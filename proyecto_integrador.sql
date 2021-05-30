@@ -9,7 +9,7 @@ nombre_usuario varchar(200) not null unique,
 email varchar(200) not null unique,
 password varchar(250) not null,
 fecha_nacimiento date not null,
-url_imagen_usuario varchar(300) NULL DEFAULT '/images/users/default-image.png',
+url_imagen_usuario varchar(300),
 telefono varchar(13)
 );
 
@@ -22,7 +22,7 @@ user_id int,
 categoria VARCHAR(100),
 nombre VARCHAR(100) NOT NULL,
 marca VARCHAR(100),
-descripcion VARCHAR(100) NULL DEFAULT 'Este producto no tiene descripcion',
+descripcion VARCHAR(100),
 comentarios INT NULL DEFAULT 0,
 updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 foreign key (user_id) references users(id)

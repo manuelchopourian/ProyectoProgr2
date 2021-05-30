@@ -7,7 +7,7 @@ let profileController = {
   
    index: (req,res) =>{
     db.User.findByPk(req.params.id)
-    .then(perfil => res.render('profile', {perfil, productos}))
+    .then(perfil => res.render('profile', {perfil, productos,perfiles}))
     .catch(err => console.log(err))
   },
 
