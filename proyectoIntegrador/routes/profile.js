@@ -4,8 +4,7 @@ let profileController = require('../controllers/profileController');
 
 
 /* GET productos listing listing. */
-router.get('/', profileController.index)
-router.get('/id/:id', profileController.porId);
+router.get('/id/:id', profileController.index);
 router.get('/edit', profileController.show);
 router.get('/edit/id/:id', profileController.editId);
 

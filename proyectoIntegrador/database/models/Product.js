@@ -35,10 +35,12 @@ let cols = {
     descripcion:{
         type: dataTypes.STRING,
         allowNull: true,
+        defaultValue: 'Este producto no tiene descripcion'
     },
     comentarios:{
         type: dataTypes.INTEGER,
         allowNull: true,
+        defaultValue: 0
     },
     updated_at:{
         type: dataTypes.DATE

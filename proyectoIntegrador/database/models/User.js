@@ -30,9 +30,10 @@ let cols = {
         type: dataTypes.DATE,
         
     },
-    url_imagen: {
+    url_imagen_usuario: {
         type: dataTypes.STRING,
         allowNull: true,
+        defaultValue:'/images/users/default-image.png'
         
     },
     telefono: {

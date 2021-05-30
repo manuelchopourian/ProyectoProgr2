@@ -65,8 +65,10 @@ let indexController = {
       nombre_usuario: req.body.nombre_usuario,
       telefono: req.body.telefono,
       email: req.body.email,
-      contrasena: req.body.contrasena,
+      password: req.body.password,
       url_imagen_usuario: req.body.url_imagen_usuario,
+      fecha_nacimiento: req.body.fecha_nacimiento,
+
       
       }
         db.User.create(usuarios)

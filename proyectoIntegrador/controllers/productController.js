@@ -4,10 +4,10 @@ const db = require('../database/models');
 let productController = {
 
 
-  index: (req, res)=>{
+  porId: (req, res)=>{
     db.Product.findByPk(req.params.id)
         .then(producto => res.render('product', {producto, perfiles}))
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
   },
 
     
@@ -36,7 +36,6 @@ let productController = {
     .catch(err => console.log(err))
   },
   
-
   edit:(req,res) =>{
     db.Product.findByPk(req.params.id)
     .then((productos)=> res.render('product-edit',{productos, perfiles}))

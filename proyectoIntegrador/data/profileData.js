@@ -2,7 +2,7 @@ let perfiles = [
 
  
     {
-        id:0,
+        id:1,
         nombreUsuario: 'joseperez',
         productos: '8 productos',
         seguidores: '145 seguidores',
@@ -12,7 +12,7 @@ let perfiles = [
     },
 
     {
-        id:1,
+        id:2,
         nombreUsuario: 'juanmartinez',
         productos: '6 productos',
         seguidores: '232 seguidores',
@@ -23,7 +23,7 @@ let perfiles = [
     },
 
     {
-        id:2,
+        id:3,
         nombreUsuario: 'martinherrera',
         productos: '9 productos',
         seguidores: '76 seguidores',
@@ -34,7 +34,7 @@ let perfiles = [
     },
 
     {
-        id:3,
+        id:4,
         nombreUsuario: 'manuelsanchez',
         productos: '5 productos',
         seguidores: '642 seguidores',
@@ -45,7 +45,7 @@ let perfiles = [
     },
 
     {
-        id:4,
+        id:5,
         nombreUsuario: 'claragonzalez',
         productos: '14 productos',
         seguidores: '1230 seguidores',
@@ -57,7 +57,7 @@ let perfiles = [
     },
 
     {
-        id:5,
+        id:6,
         nombreUsuario: 'catalinarodriguez',
         productos: '1 producto',
         seguidores: '20 seguidores',
@@ -67,7 +67,7 @@ let perfiles = [
     },
 
     {
-        id:6,
+        id:7,
         nombreUsuario: 'sofialopez',
         productos: '3 productos',
         seguidores: '79 seguidores',
@@ -77,7 +77,7 @@ let perfiles = [
     },
 
     {
-        id:7,
+        id:8,
         nombreUsuario: 'carlatorres',
         productos: '5 productos',
         seguidores: '323 seguidores',
