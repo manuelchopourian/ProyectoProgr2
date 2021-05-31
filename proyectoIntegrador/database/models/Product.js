@@ -35,7 +35,6 @@ let cols = {
     descripcion:{
         type: dataTypes.STRING,
         allowNull: true,
-        defaultValue: 'Este producto no tiene descripcion'
     },
     comentarios:{
         type: dataTypes.INTEGER,

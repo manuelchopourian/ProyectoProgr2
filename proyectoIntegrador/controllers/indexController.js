@@ -12,7 +12,15 @@ let indexController = {
         limit:4
       })
         .then(productos => {
-          res.render('index',{productos})
+          db.Product.findAll({
+            order:[
+              ['comentarios','DESC'],
+            ],
+            limit:4
+          })
+            .then(coment => {   
+              res.render('index',{productos,coment})    
+            })
           
         })
         .catch(err => {
@@ -66,7 +74,6 @@ let indexController = {
       telefono: req.body.telefono,
       email: req.body.email,
       password: req.body.password,
-      url_imagen_usuario: req.body.url_imagen_usuario,
       fecha_nacimiento: req.body.fecha_nacimiento,
 
       

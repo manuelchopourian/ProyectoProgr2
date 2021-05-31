@@ -46,7 +46,29 @@
 				<h2 class="products-title">Mas Comentados</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			
+			<% for (let i = 0; i < coment.length; i++) { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href='/product/id/<%= coment[i].id %>'>
+							<figure class="product-box_image">
+								<img src= "<%= coment[i].url_imagen_producto %>"  alt='<%= coment[i].producto%> '>
+							</figure>
+							<article class="product-box_data">
+								<h2>
+									<% if(coment[i].categoria == null){ %> 
+										 <%=productos[i].nombre%>
+									<% } else{ %> 
+										<%=coment[i].categoria + " " + coment[i].nombre%>
+										<% } %> 
+	
+								</h2>
+								<p><%= productos[i].descripcion  %> </p>
+								<p> <%= productos[i].comentarios %>  Comentarios</p>
+							</article>
+						</a>
+					</section>
+				</div>
+				<%  } %> 
 		</div>
 	</div>
 	<!-- /Novedades -->

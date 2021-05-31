@@ -1,5 +1,6 @@
 let  perfiles = require('../data/profileData')
 const db = require('../database/models');
+const op = db.Sequelize.Op;
 
 let productController = {
 

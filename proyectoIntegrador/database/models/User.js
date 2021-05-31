@@ -53,7 +53,8 @@ let cols = {
 
 let config = {
 tablename : 'users',
-underscored : true
+underscored : true,
+timestamps: false,
 };
 
 const Users = sequelize.define(alias, cols , config);

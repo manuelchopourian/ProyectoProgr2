@@ -522,21 +522,28 @@ textarea.form-input {
 }
 .registrado{
   display: grid;
-  grid-template-rows: 7fr 1fr;
-  margin:auto
+  grid-template-rows: 8fr 1fr;
+  margin:auto;
+  width: 30%;
 }
 .registrado button{
-  background-color: rgb(201, 201, 201);
-  border: 2px solid black;
+  font-size: 1.6em;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--light-blue);
 }
 .datos{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   margin-bottom: 10px;
+}
+.fecha{
+  font-size: 14px;
+  text-align: left;
 }
 .dataRegistro input{
   box-sizing: border-box;
-  width: 90%;
+  width: 100%;
   margin: 0 5% 0 0;
   height: 30px;
 }
@@ -567,13 +574,16 @@ textarea.form-input {
 .iniciarSesion{
   margin: auto;
   display: grid;
-  grid-template-rows: 4fr 1fr;
+  grid-template-rows: 3fr 1fr;
   width: 30%;
 }
 .iniciarSesion button{
-  height: 30px;
-  border: 2px solid black;
-  background-color: rgb(201, 201, 201);
+  font-size: 1.6em;
+  color: #ffffff;
+  height: 4.5vh;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--light-blue);
 }
 .datosInicio input{
   width: 100%;

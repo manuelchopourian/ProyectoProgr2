@@ -27,6 +27,7 @@ let cols = {
 let config = {
     tablename : 'coments',
     underscored : true,
+    timestamps: false
 };
 
 const Coments = sequelize.define(alias, cols , config);
