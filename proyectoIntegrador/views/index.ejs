@@ -56,14 +56,14 @@
 							<article class="product-box_data">
 								<h2>
 									<% if(coment[i].categoria == null){ %> 
-										 <%=productos[i].nombre%>
+										 <%=coment[i].nombre%>
 									<% } else{ %> 
 										<%=coment[i].categoria + " " + coment[i].nombre%>
 										<% } %> 
 	
 								</h2>
-								<p><%= productos[i].descripcion  %> </p>
-								<p> <%= productos[i].comentarios %>  Comentarios</p>
+								<p><%= coment[i].descripcion  %> </p>
+								<p> <%= coment[i].comentarios %>  Comentarios</p>
 							</article>
 						</a>
 					</section>
