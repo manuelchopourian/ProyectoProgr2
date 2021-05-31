@@ -15,10 +15,24 @@ let profileController = {
     res.render('profile-edit', {perfiles: perfiles}); 
    },
 
-  editId: (req,res) =>{
+   edit:(req,res) =>{
+    db.User.findByPk(req.params.id)
+    .then((perfil)=> res.render('profile-edit',{perfil, perfiles}))
+    .catch(err => console.log(err))
+  },
+  update:(req,res) =>{
+    let perfilActualizado = req.body
+    db.User.update(
+      perfilActualizado, 
+      {
+      where:{
+        id:req.params.id
 
-    res.render('profile-edit',{perfiles : perfiles[req.params.id], productos })
-   },
+      }
+    })
+    .then(()=> res.redirect('/'))
+    .catch(err => console.log(err))
+  },
 
 }
  

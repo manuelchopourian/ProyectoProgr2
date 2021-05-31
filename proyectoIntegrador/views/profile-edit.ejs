@@ -7,30 +7,26 @@
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class="registrado" action="" method="POST">
-				<div class="datos">
+			<form class="registrado" action="/profile/edit/id/<%= perfil.id %> " method="POST">
 				<div class="dataRegistro">
-				<p> <label for="Cambian Nombre de Usuario" ></label>
-					<input type="text" placeholder="Cambiar Nombre de Usuario">
+				<p> <label for="Cambiar Nombre" ></label>
+					<input type="text" placeholder="Cambiar Nombre" name="nombre" value="<%= perfil.nombre  %> ">
+				</p>
+				<p> <label for="Cambiar Apellido" ></label>
+					<input type="text" placeholder="Cambiar Apellido" name="apellido" value="<%= perfil.apellido  %> ">
+				</p>
+				<p> <label for="Cambiar Nombre de Usuario" ></label>
+					<input type="text" placeholder="Cambiar Nombre de Usuario" name="nombre_usuario" value="<%= perfil.nombre_usuario  %> ">
 				</p>
 				<p> <label for="Cambiar Telefono"></label>
-					<input type="tel" placeholder="Cambiar Telefono">
+					<input type="tel" placeholder="Cambiar Telefono" name="telefono" value="<%= perfil.telefono  %> ">
 				</p>
 				<p> <label for="Cambiar Email"></label>
-					<input type="email" placeholder="Cambiar Email">
+					<input type="email" placeholder="Cambiar Email"  name="email" value="<%= perfil.email%> ">
 				</p>
-				<p> <label for="Nueva Contraseña"></label>
-					<input type="password" placeholder="Nueva Contraseña">
-				</p>
-				<p> <label for="Confirmar Contraseña"></label>
-					<input type="password" placeholder="Confirmar Nueva Contraseña">
-				</p>
-				</div>
-				<div class="fotoRegistrado">
 				<p> <label for="Cambiar Imagen de perfil"></label>
-					<input type="file" placeholder="URL de nueva imagen del perfil" accept="image/*">
+					<input type="text" placeholder="URL de nueva imagen del perfil" name="url_imagen_usuario" value="<%= perfil.url_imagen_usuario %> ">
 				</p>
-				</div>
 				</div>
 				<button type="submit">Confirmar Cambios</button>
 				
