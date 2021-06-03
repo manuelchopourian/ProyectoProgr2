@@ -33,6 +33,21 @@ let profileController = {
     .then(()=> res.redirect('/'))
     .catch(err => console.log(err))
   },
+  delete:(req,res) =>{
+    db.User.findByPk(req.params.id)
+    .then((perfil)=> res.render('profile-delete',{perfil, perfiles}))
+    .catch(err => console.log(err))
+  },
+
+  destroy:(req,res) =>{
+    db.User.destroy({
+      where:{
+        id:req.params.id
+      }
+    })
+    .then(()=> res.redirect('/'))
+    .catch(err => console.log(err))
+  },
 
 }
  

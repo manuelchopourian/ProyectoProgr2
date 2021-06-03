@@ -6,6 +6,7 @@
 			<div class="col-12">
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
+			
 			<!-- Show the "ultimos" products -->
 			<form class="registrado" action="/profile/edit/id/<%= perfil.id %> " method="POST">
 				<div class="dataRegistro">
@@ -28,8 +29,8 @@
 					<input type="text" placeholder="URL de nueva imagen del perfil" name="url_imagen_usuario" value="<%= perfil.url_imagen_usuario %> ">
 				</p>
 				</div>
-				<button type="submit">Confirmar Cambios</button>
-				
+				<button type="submit" class="registrado-boton">Confirmar Cambios</button>
+				<a href='/profile/delete/id/<%= perfil.id %> ' class="perfil-borrado">Borrar perfil</a>
 				
 			</form>
 

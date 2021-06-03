@@ -1,0 +1,17 @@
+<%- include('./partials/headerLogueado')  %>
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">¿Esta seguro qué desea eliminar su perfil?</h2>
+			</div>
+			<div class="respuesta">
+			<form action="/profile/delete/id/<%= perfil.id %>" style="display: inline;" method="POST">
+				<button type="submit" class="">Si</button>
+			</form>
+			<a href="/profile/id/<%= perfil.id %>">No</a>
+			</div>
+
+
+	<%- include('./partials/footer')  %> 

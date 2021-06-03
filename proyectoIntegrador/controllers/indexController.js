@@ -1,6 +1,7 @@
 let db = require('../database/models');
 const op = db.Sequelize.Op;
-let  perfiles = require('../data/profileData')
+
+const bcrypt = require('bcryptjs')
 
 
 let indexController = {
@@ -62,10 +63,10 @@ let indexController = {
     res.render('login'); 
   },
   register : (req, res) => { 
-    res.render('register' ,  {perfiles: perfiles}); 
+    res.render('register'); 
   },
 
-  registerstore : (req, res) => {
+  store: (req, res) => {
 
       let usuarios = {
       nombre: req.body.nombre,
@@ -73,8 +74,8 @@ let indexController = {
       nombre_usuario: req.body.nombre_usuario,
       telefono: req.body.telefono,
       email: req.body.email,
-      password: req.body.password,
       fecha_nacimiento: req.body.fecha_nacimiento,
+      password: bcrypt.hashSync(req.body.password, 11)
 
       
       }

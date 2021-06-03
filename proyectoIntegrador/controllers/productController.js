@@ -13,7 +13,7 @@ let productController = {
 
     
   add : (req, res) => { 
-    res.render('product-add', {perfiles: perfiles}); 
+    res.render('product-add'); 
     },
   
   store: (req,res) => {
@@ -39,7 +39,7 @@ let productController = {
   
   edit:(req,res) =>{
     db.Product.findByPk(req.params.id)
-    .then((productos)=> res.render('product-edit',{productos, perfiles}))
+    .then((productos)=> res.render('product-edit',{productos}))
     .catch(err => console.log(err))
   },
   update:(req,res) =>{

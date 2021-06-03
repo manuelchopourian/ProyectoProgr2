@@ -64,6 +64,9 @@ hr {
   border: none;
   border-bottom: solid 1px var(--light-gray);
 }
+.row{
+  width: 100%;
+}
 
 
 /*====== Main Header ======*/
@@ -283,6 +286,7 @@ hr {
   background-color: #ffffff;
   padding: 20px 0;
   margin-top: 80px;
+  width: 100%;
 }
 
 .footer-data {
@@ -367,7 +371,7 @@ hr {
   text-decoration: none;
   margin: 10px;
   margin-left: 35px;
-  border-radius: 7%;
+  border-radius: 4.5%;
 }
 .product-detail-description {
   padding: 15px 15px 15px 40px;
@@ -396,7 +400,7 @@ hr {
     font-size: 1.5em;
     line-height: 1.5;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-radius: 7%;
+    border-radius: 4.5%;
   
 }
 .small {
@@ -526,7 +530,7 @@ textarea.form-input {
   margin:auto;
   width: 30%;
 }
-.registrado button{
+.registrado-boton{
   font-size: 1.6em;
   color: #ffffff;
   height: 4.5vh;
@@ -550,9 +554,6 @@ textarea.form-input {
 }
 .agregarProducto button{
   width: 100%;
-  height: 30px;
-  background-color: rgb(201, 201, 201);
-  border: 2px solid black;
 }
 .agregarProducto input{
  height: 30px;
@@ -561,6 +562,8 @@ textarea.form-input {
 .infoProducto{
   display: grid;
   grid-template-rows: 7fr 1fr;
+  margin: auto;
+  width: 30%;
 }
 .iniciarSesion{
   margin: auto;
@@ -579,6 +582,10 @@ textarea.form-input {
 .datosInicio input{
   width: 100%;
   height: 30px;
+}
+input{
+  border-radius: 4px;
+  border:0.5px solid gray 
 }
 
 /*====== Profile ======*/
@@ -608,6 +615,45 @@ textarea.form-input {
 .datos-perfil{
   position: relative;
   right: 15vw;
+}
+.respuesta{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  width: 15%;
+  font-size: 12px;
+}
+.respuesta button{
+  background-color: var(--light-blue);
+  border: none;
+  color: whitesmoke;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-radius: 7%;
+  width: 4vw;
+}
+.respuesta a{
+  background-color: rgb(255, 255, 255);
+  border: none;
+  color: var(--light-blue);
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-radius: 7%;
+  width: 4vw;
+}
+.perfil-borrado{
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 
