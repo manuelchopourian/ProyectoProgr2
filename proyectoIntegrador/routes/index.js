@@ -7,6 +7,8 @@ let indexController = require('../controllers/indexController');
 router.get('/', indexController.index)
 router.get('/search-results', indexController.search)
 router.get('/login', indexController.login)
+router.post('/login', indexController.session)
+router.post('/logout', indexController.logout);
 router.get('/register', indexController.register)
 router.post('/register', indexController.store)
 

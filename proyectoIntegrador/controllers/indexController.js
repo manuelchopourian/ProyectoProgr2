@@ -1,5 +1,6 @@
 let db = require('../database/models');
 const op = db.Sequelize.Op;
+let users = db.User
 
 const bcrypt = require('bcryptjs')
 
@@ -60,8 +61,50 @@ let indexController = {
     
   },
   login : (req, res) => { 
-    res.render('login'); 
+    if(req.session.user != undefined){
+      return res.redirect('/')
+  } else {
+      return res.render('login')
+  }
   },
+
+  session : (req, res) => { 
+// Errores
+    let errors = {};
+// usuario por email
+users.findOne({
+  where: [{email: req.body.email}]
+})
+// validar
+.then( (user) => {
+  if(user==null){
+     errors.session = "Email es incorrecto";
+     res.locals.error = errors;
+     return res.render('login') 
+  } else if (bcrypt.compareSync(req.body.password, user.password) == false){
+      errors.session = "Contraseña Incorrecta";
+      res.locals.errors = errors;
+     return res.render('login') 
+  } else {
+      req.session.user = user;
+      
+      if(req.body.rememeberme != undefined){
+        res.cookie('userID', users.id, {maxAge: 1000 * 60 * 5});
+    }
+}
+return res.redirect('/');
+})
+.catch( err => console.log(err))
+},
+
+logout: (req, res)=>{
+  req.session.destroy();
+  res.clearCookie('userID')
+  res.redirect('/')
+},
+  
+
+
   register : (req, res) => { 
     res.render('register'); 
   },

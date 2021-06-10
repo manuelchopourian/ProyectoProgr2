@@ -16,8 +16,10 @@
    
 </head>
 <body>
+    
 <!-- Header -->
 <header class="main-header">
+
     <div class="container">
         <div class="row align-items-center">
             <div class="col-5 col-md-2">
@@ -52,6 +54,13 @@
             </ul>
 
             <ul class="right-navbar">
+                <% if(locals.user){ %>
+                    <h2>Hola: <%= user.nombre_usuario %></h2>
+                    <form action="/logout" method="POST">
+                      <button type="submit">Logout</button>
+                    </form>
+                  <% }else{ %>
+
                 <!-- Solo logueado <li><a href="profile.html">
                         Nombre del usuario <i class="fas fa-user"></i>
                     </a>
@@ -70,6 +79,7 @@
                 <li>
                     <a href='/login'>Ingresá <i class="fas fa-sign-in-alt"></i></a>
                 </li>
+                <%  } %> 
             </ul>
         </nav>
     </div>

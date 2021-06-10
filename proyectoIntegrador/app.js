@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session =require('express-session')
+let db = require('./database/models')
 
 var indexRouter = require('./routes/index');
 var productRouter = require('./routes/product');
@@ -26,6 +27,36 @@ app.use(session({
   secret: "nuestro mensaje secreto",
   resave: false,
   saveUninitialized: true}));
+
+// sesion
+
+app.use(function(req, res, next){
+  if(req.session.user != undefined){
+    res.locals.user = req.session.user
+    
+  }
+  return next()
+})
+app.use((req, res, next) => {
+  if(req.cookies.userId != undefined && req.session.user == undefined){
+    db.User.findByPk(req.cookies.userId)
+      .then(user =>{
+        req.session.user = user
+        res.locals = req.session.user
+        return next()
+      })
+      .catch( error => console.log(error))
+  }
+  else{
+    return next()
+
+  }
+ 
+
+});
+
+
+
 
 app.use('/', indexRouter);
 app.use('/product', productRouter);
