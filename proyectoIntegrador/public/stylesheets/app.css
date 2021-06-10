@@ -179,13 +179,13 @@ hr {
 
 /*====== Products ======*/
 .products-wrapper {
-  margin-top: 30px;
+  margin-top: 3vh;
   margin-bottom: 30px;
   text-align: center;
 }
 
 .products-title {
-  font-size: 2.8em;
+  font-size: 3.5vh;
   color: black;
   --base-font-family: 'Roboto', sans-serif;
   font-style: italic;
@@ -221,7 +221,7 @@ hr {
 }
 
 .product-box_data h2 {
-  font-size: 2.2em;
+  font-size: 2.8vh;
   font-weight: 550;
   margin: auto;
 }
@@ -666,7 +666,7 @@ input{
   }
 
   .banner {
-    height: 320px;
+    height: 42vh;
   }
 
   .btn-toggle-navbar {

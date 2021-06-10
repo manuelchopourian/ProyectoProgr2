@@ -2,6 +2,9 @@ let  perfiles = require('../data/profileData')
 const db = require('../database/models');
 const op = db.Sequelize.Op;
 
+const multer = require('multer');
+const path = require('path');
+
 let productController = {
 
 
@@ -55,7 +58,7 @@ let productController = {
     .then(()=> res.redirect('/'))
     .catch(err => console.log(err))
   },
-
+  
 }
     
  module.exports = productController;
