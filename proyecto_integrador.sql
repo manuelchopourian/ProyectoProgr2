@@ -4,7 +4,7 @@ use proyecto_integrador;
 create table users (
 id int primary key auto_increment,
 nombre varchar (100) not null,
-apellido varchar(200) not null,
+apellido varchar(200),
 nombre_usuario varchar(200) not null unique, 
 email varchar(200) not null unique,
 password varchar(250) not null,
