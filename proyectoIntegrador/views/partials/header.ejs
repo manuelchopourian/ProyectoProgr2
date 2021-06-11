@@ -50,28 +50,24 @@
         <nav class="main-navbar">
             <ul class="left-navbar">
                 <li><a href='/'>Todos los productos</a></li>
-                <!-- solo logueado <li><a href="">Cargar productos</a></li> -->
+                <% if(locals.user){ %>
+                <li><a href='/product/add'>Cargar productos</a></li>
+                <% } %>
             </ul>
 
             <ul class="right-navbar">
                 <% if(locals.user){ %>
-                    <h2>Hola: <%= user.nombre_usuario %></h2>
-                    <form action="/logout" method="POST">
-                      <button type="submit">Logout</button>
+                    <p>¡Hola <%=user.nombre%>!</p>
+                    <li><a href='/profile/id/<%= user.id %>  '>
+						Mi Perfil <i class="fas fa-user"></i>
+						</a>
+					</li>
+                    <form action="/logout" method="POST" class="cerrarSesion">
+                      <button type="submit" class="logout">
+                          Cerrar Sesion <i class="fas fa-sign-in-alt"></i>
+                    </button>
                     </form>
                   <% }else{ %>
-
-                <!-- Solo logueado <li><a href="profile.html">
-                        Nombre del usuario <i class="fas fa-user"></i>
-                    </a>
-                </li>
-                <li>
-                    <form action="" method="post">
-                        <button class="logout" type="submit">
-                            Cerrar sesión <i class="fas fa-sign-in-alt"></i>
-                        </button>
-                    </form>
-                </li> -->
                 <li>
                     <a href='/register'>Creá tu cuenta <i class="far fa-address-card"></i>
                     </a>

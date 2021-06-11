@@ -1,25 +1,29 @@
-
 <%- include('./partials/header')  %>
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
+			
 			<div class="col-12">
 				<h2 class="products-title">Ingresar</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
+				
 			<div class="iniciarSesion">
 			<div class="datosInicio">
 			<form class="" action="" method="POST">
 			
-				<p> <label for="Email"></label>
+				<p> 
+					<% if(locals.errors){ %>
+						<p class="alerta"><%= errors.session %></p>
+					<% } %>
+					<label for="Email"></label>
 					<input type="email" placeholder="Email" name="email">
 				</p>
 				<p> <label for="Contraseña"></label>
 					<input type="password" placeholder="Contraseña" name="password">
 				</p>
-				<p>
-					<input type="checkbox" name="rememberme" />
-					Recordame
+				<p class="recordar">
+					Recordame:
+					<input type="checkbox" name="remember">
 				<p>
 				</div>
 				<button type="submit">Iniciar Sesion</button>

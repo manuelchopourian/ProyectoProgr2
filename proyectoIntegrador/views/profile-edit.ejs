@@ -1,13 +1,20 @@
-<%- include('./partials/headerLogueado')  %>
+<%- include('./partials/header')  %>
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
+				<% if(locals.user.id == perfil.id){ %>
 				<h2 class="products-title">Editar mi perfil</h2>
+				<% } else { %>
+					<h2 class="products-title">No puedes editar este perfil ya que no te pertenece</h2>
+				<% }%>
+
 			</div>
 			
 			<!-- Show the "ultimos" products -->
+			<% if(locals.user.id == perfil.id){ %>
+
 			<form class="registrado" action="/profile/edit/id/<%= perfil.id %> " method="POST">
 				<div class="dataRegistro">
 				<p> <label for="Cambiar Nombre" ></label>
@@ -33,6 +40,8 @@
 				<a href='/profile/delete/id/<%= perfil.id %> ' class="perfil-borrado">Borrar perfil</a>
 				
 			</form>
+			<% }%>
+			
 
 
 

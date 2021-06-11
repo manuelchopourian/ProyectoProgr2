@@ -40,6 +40,9 @@ let profileController = {
   },
 
   destroy:(req,res) =>{
+    req.session.destroy();
+    res.clearCookie('userID')
+    res.redirect('/')
     db.User.destroy({
       where:{
         id:req.params.id

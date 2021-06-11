@@ -1,4 +1,4 @@
-<%- include('./partials/headerLogueado') %> 
+<%- include('./partials/header') %> 
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
@@ -8,9 +8,13 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"><%= perfil.nombre_usuario%>
-						<a href='/profile/edit/id/<%= perfil.id %> '>
-							<i class="fas fa-cog"></i>
-						</a>
+						<% if(locals.user == undefined){ %>
+			
+						<% } else if (locals.user.id == perfil.id){%>
+								<a href='/profile/edit/id/<%= locals.user.id %> '>
+									<i class="fas fa-cog"></i>
+								</a>
+								<% } %>
 					</h1>
 					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 				</div>

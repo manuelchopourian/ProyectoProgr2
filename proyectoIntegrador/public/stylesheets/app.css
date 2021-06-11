@@ -587,6 +587,24 @@ input{
   border-radius: 4px;
   border:0.5px solid gray 
 }
+.recordar{
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 30%;
+  font-size: 12px;
+}
+.recordar input{
+  height: 16px;
+  padding-top: 0px;
+  position: relative;
+  bottom: 4px;
+}
+.alerta{
+  color: #e40a0a;
+  font-size: 14px;
+  font-weight: 400;
+}
 
 /*====== Profile ======*/
 .info-usuario{
@@ -696,8 +714,8 @@ input{
     margin-right: 15px;
   }
 
-  .right-navbar li {
-    margin-left: 15px;
+  .right-navbar li{
+    margin-left: 25px;
   }
 
   .main-footer {

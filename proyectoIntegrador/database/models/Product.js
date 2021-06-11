@@ -19,7 +19,7 @@ let cols = {
         type: dataTypes.DATE
     },
     user_id :{
-        type: dataTypes.INTEGER
+        type: dataTypes.INTEGER,
     },
     categoria:{
         type: dataTypes.STRING,

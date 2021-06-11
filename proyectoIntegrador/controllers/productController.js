@@ -25,6 +25,7 @@ let productController = {
     url_imagen_producto: req.body.url_imagen_producto,
     marca: req.body.marca,
     descripcion: req.body.descripcion,
+
     }
       db.Product.create(productos)
       .then(()=> res.redirect('/'))

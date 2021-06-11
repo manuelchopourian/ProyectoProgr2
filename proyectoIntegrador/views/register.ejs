@@ -1,16 +1,17 @@
 <%- include('./partials/header')  %>
 
-	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Registrate</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
 			<form class="registrado" action="/register" method="POST">
 				<div class="datos">
 				<div class="dataRegistro">
 				<p> 
+					<% if(locals.errors){ %>
+						<p class="alerta" > <%= errors.register %><p>
+					<% } %>
 					<input type="text" placeholder="Nombre" name="nombre">
 				</p>
 				<p> 
@@ -27,6 +28,9 @@
 				</p>
 				<p> 
 					<input type="password" placeholder="Contraseña" name="password">
+				</p>
+				<p> 
+					<input type="password" placeholder="Confirmar Contraseña" name="repassword">
 				</p>
 				<p> <p class="fecha">Fecha de Nacimiento:</p>
 					<input type="date" placeholder="Fecha de Nacimiento" name="fecha_nacimiento">
