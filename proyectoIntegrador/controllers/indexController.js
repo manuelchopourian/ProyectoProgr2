@@ -188,6 +188,7 @@ logout: (req, res)=>{
           email: req.body.email,
           fecha_nacimiento: req.body.fecha_nacimiento,
           password: bcrypt.hashSync(req.body.password, 11),
+          url_imagen_usuario: req.file.filename
           }
             db.User.create(usuarios)
             .then(()=> res.redirect('/login'))

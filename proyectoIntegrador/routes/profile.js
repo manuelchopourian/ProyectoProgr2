@@ -16,9 +16,3 @@ router.post('/delete/id/:id', profileController.destroy)
 module.exports = router;
 
 
-/*<% if (locals.user != null ) { %>
-	<%- include('./partials/headerLogueado')  %> 
-<%  } else{ %>
-
-	<%- include('./partials/header')  %> 
-<%  }  %>*/

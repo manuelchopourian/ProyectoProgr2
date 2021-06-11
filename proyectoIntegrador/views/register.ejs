@@ -5,7 +5,7 @@
 			<div class="col-12">
 				<h2 class="products-title">Registrate</h2>
 			</div>
-			<form class="registrado" action="/register" method="POST">
+			<form class="registrado" action="/register" method="POST" enctype="multipart/form-data">
 				<div class="datos">
 				<div class="dataRegistro">
 				<p> 
@@ -34,6 +34,9 @@
 				</p>
 				<p> <p class="fecha">Fecha de Nacimiento:</p>
 					<input type="date" placeholder="Fecha de Nacimiento" name="fecha_nacimiento">
+				</p>
+				<p> 
+					<input type="file" name="url_imagen_usuario">
 				</p>
 
 				</div>

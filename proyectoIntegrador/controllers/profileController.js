@@ -30,7 +30,8 @@ let profileController = {
 
       }
     })
-    .then(()=> res.redirect('/'))
+    .then(()=> 
+    res.redirect('/'))
     .catch(err => console.log(err))
   },
   delete:(req,res) =>{
