@@ -20,17 +20,28 @@ let profileController = {
     .catch(err => console.log(err))
   },
   update:(req,res) =>{
-    let perfilActualizado = req.body
+    let usuario = {
+      id: req.session.user.id,
+      nombre: req.body.nombre,
+      apellido: req.body.apellido,
+      nombre_usuario: req.body.nombre_usuario,
+      telefono: req.body.telefono,
+      email: req.body.email,
+      url_imagen_usuario: req.file.filename
+      }
     db.User.update(
-      perfilActualizado, 
+      usuario, 
       {
       where:{
         id:req.params.id
 
       }
     })
-    .then(()=> 
-    res.redirect('/'))
+    .then(()=> {
+    req.session.user = usuario
+    res.redirect('/')
+    })
+    
     .catch(err => console.log(err))
   },
   delete:(req,res) =>{

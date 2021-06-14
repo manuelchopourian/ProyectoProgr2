@@ -10,16 +10,20 @@
 			<div class="agregarProducto">
 			<form class="infoProduct" action="/product/add" method="POST" enctype="multipart/form-data">
 				<p>
+					<% if(locals.errors){ %>
+						<p class="alerta" > <%= errors.productAdd %><p>
+					<% } %>
 					<input type="text" placeholder="Nombre del Producto" name="nombre">
-				</p>
-				<p>
-					<input type="file" placeholder="Insertar URL de imagen" name="url_imagen_producto">
 				</p>
 				<p> 
 					<input type="text" placeholder="Marca" name="marca">
 				</p>
 				<p> 
 					<input type="text" placeholder="Descripcion del Producto" name="descripcion" >
+				</p>
+				<p>
+					<p class="fecha">Imagen del Producto:</p>
+					<input type="file" placeholder="Insertar URL de imagen" name="url_imagen_producto" accept="image/*">
 				</p>
 				
 

@@ -616,7 +616,13 @@ input{
 }
 
 .foto-perfil{
-  border-radius: 80px;
+  overflow: hidden;
+}
+.foto-perfil img{
+  width:150px;
+  height:150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .main-title{

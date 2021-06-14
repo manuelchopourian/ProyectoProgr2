@@ -23,7 +23,7 @@ router.post('/id/:id', productController.destroy)
 router.get('/add', productController.add)
 router.post('/add', upload.single('url_imagen_producto'),productController.store)
 router.get('/edit/:id',productController.edit)
-router.post('/edit/:id',productController.update)
+router.post('/edit/:id',upload.single('url_imagen_producto'), productController.update)
 
 
 

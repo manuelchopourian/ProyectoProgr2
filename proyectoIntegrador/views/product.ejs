@@ -10,13 +10,18 @@
 					<% } %> 
 
 			</h2>
-			<p class="product-detail-a">
-				<a href='/product/edit/<%= producto.id %>'>Editar Posteo</a>  
-				
-			</p>
-			<form action="/product/id/<%= producto.id %>" style="display: inline;" method="POST">
-				<button type="submit" class="borrado">Borrar Posteo</button>
-			</form>
+			<% if(locals.user == undefined){ %>
+			
+				<% } else if (locals.user.id == producto.user_id){%>
+					<p class="product-detail-a">
+						<a href='/product/edit/<%= producto.id %>'>Editar Posteo</a>  
+						
+					</p>
+					<form action="/product/id/<%= producto.id %>" style="display: inline;" method="POST">
+						<button type="submit" class="borrado">Borrar Posteo</button>
+					</form>
+						<% } %>
+			
 		</div>
 		<div class="product-detail">
 			<div class="row">

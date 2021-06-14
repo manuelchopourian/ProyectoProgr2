@@ -4,16 +4,22 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Editar productos</h2>
+				<% if(locals.user.id == productos.user_id){ %>
+					<h2 class="products-title">Editar Producto</h2>
+					<% } else { %>
+						<h2 class="products-title">Este producto no te pertenece</h2>
+					<% }%>
+	
 			</div>
 			<!-- Show the "ultimos" products -->
+			<% if(locals.user.id == productos.user_id){ %>
 			<div class="agregarProducto">
-			<form class="infoProduct" action="/product/edit/<%= productos.id %> " method="POST">
+			<form class="infoProduct" action="/product/edit/<%= productos.id %> " method="POST" enctype="multipart/form-data">
 				<p>
 					<input type="text" placeholder="Nombre del Producto" name="nombre" value="<%= productos.nombre  %> ">
 				</p>
 				<p>
-					<input type="text" placeholder="Insertar Nueva URL de imagen" name="url_imagen_producto" value="<%= productos.url_imagen_producto  %>">
+					<input type="file" placeholder="Insertar Nueva URL de imagen" name="url_imagen_producto" accept="image/*">
 				</p>
 				<p> 
 					<input type="text" placeholder="Marca" name="marca" value="<%= productos.marca  %>">
@@ -27,5 +33,6 @@
 				
 			</form>
 			</div>
+			<% }%>
 
 	<%- include('./partials/footer')  %> 

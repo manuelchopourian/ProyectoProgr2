@@ -20,17 +20,37 @@ let productController = {
     },
   
   store: (req,res) => {
-    let productos = {
-    nombre: req.body.nombre,
-    url_imagen_producto: req.file.filename,
-    marca: req.body.marca,
-    descripcion: req.body.descripcion,
+    let errors = {};
+        //chequear los campos obligatorios
+        
+       if(req.body.nombre == ""){ // El Nombre no debe esta vacio
+            errors.productAdd = "Nombre no puede estar vacio"
+            res.locals.errors = errors
 
-    }
-      db.Product.create(productos)
-      .then(()=> res.redirect('/'))
-      .catch(err => console.log(err))
-  },
+            return res.render('product-add')
+
+       } 
+       else if(req.body.descripcion == ""){ // La descripcion no debe estar vacia
+          errors.productAdd = "Descripcion no puede estar vacio"
+          res.locals.errors = errors
+
+          return res.render('product-add')
+
+       }
+       else{
+        let productos = {
+        nombre: req.body.nombre,
+        url_imagen_producto: req.file.filename,
+        marca: req.body.marca,
+        descripcion: req.body.descripcion,
+        user_id: req.session.user.id
+
+        }
+          db.Product.create(productos)
+          .then(()=> res.redirect('/'))
+          .catch(err => console.log(err))
+      }
+    },
   destroy:(req,res) =>{
     db.Product.destroy({
       where:{
@@ -47,9 +67,15 @@ let productController = {
     .catch(err => console.log(err))
   },
   update:(req,res) =>{
-    let productoActualizado = req.body
+    let producto = {
+      nombre: req.body.nombre,
+      marca: req.body.marca,
+      descripcion: req.body.descripcion,
+      user_id: req.session.user.id,
+      url_imagen_producto: req.file.filename
+      }
     db.Product.update(
-      productoActualizado, 
+      producto, 
       {
       where:{
         id:req.params.id
