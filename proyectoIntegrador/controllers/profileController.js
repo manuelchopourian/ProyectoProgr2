@@ -1,4 +1,3 @@
-let  perfiles = require('../data/profileData')
 let productos = require('../data/products')
 
 const db = require('../database/models');
@@ -7,17 +6,17 @@ let profileController = {
   
    index: (req,res) =>{
     db.User.findByPk(req.params.id)
-    .then(perfil => res.render('profile', {perfil, productos,perfiles}))
+    .then(perfil => res.render('profile', {perfil, productos}))
     .catch(err => console.log(err))
   },
 
   show : (req, res) => { 
-    res.render('profile-edit', {perfiles: perfiles}); 
+    res.render('profile-edit'); 
    },
 
    edit:(req,res) =>{
     db.User.findByPk(req.params.id)
-    .then((perfil)=> res.render('profile-edit',{perfil, perfiles}))
+    .then((perfil)=> res.render('profile-edit',{perfil}))
     .catch(err => console.log(err))
   },
   update:(req,res) =>{
@@ -36,7 +35,7 @@ let profileController = {
   },
   delete:(req,res) =>{
     db.User.findByPk(req.params.id)
-    .then((perfil)=> res.render('profile-delete',{perfil, perfiles}))
+    .then((perfil)=> res.render('profile-delete',{perfil}))
     .catch(err => console.log(err))
   },
 

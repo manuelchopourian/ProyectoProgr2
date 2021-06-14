@@ -13,7 +13,7 @@ let cols = {
         allowNull: true,
     },
     url_imagen_producto:{
-        type: dataTypes.STRING
+        type: dataTypes.STRING,
     },
     fecha_publicacion:{
         type: dataTypes.DATE

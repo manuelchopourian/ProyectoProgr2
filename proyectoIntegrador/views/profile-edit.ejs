@@ -15,7 +15,7 @@
 			<!-- Show the "ultimos" products -->
 			<% if(locals.user.id == perfil.id){ %>
 
-			<form class="registrado" action="/profile/edit/id/<%= perfil.id %> " method="POST">
+			<form class="registrado" action="/profile/edit/id/<%= perfil.id %> " method="POST" enctype="multipart/form-data">
 				<div class="dataRegistro">
 				<p> <label for="Cambiar Nombre" ></label>
 					<input type="text" placeholder="Cambiar Nombre" name="nombre" value="<%= perfil.nombre  %> ">
@@ -33,7 +33,7 @@
 					<input type="email" placeholder="Cambiar Email"  name="email" value="<%= perfil.email%> ">
 				</p>
 				<p> <label for="Cambiar Imagen de perfil"></label>
-					<input type="text" placeholder="URL de nueva imagen del perfil" name="url_imagen_usuario" value="<%= perfil.url_imagen_usuario %> ">
+					<input type="file" placeholder="URL de nueva imagen del perfil" name="url_imagen_usuario" value="<%= perfil.url_imagen_usuario %> ">
 				</p>
 				</div>
 				<button type="submit" onclick="show()" class="registrado-boton">Confirmar Cambios</button>

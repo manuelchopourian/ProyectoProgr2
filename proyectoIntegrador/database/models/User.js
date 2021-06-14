@@ -33,7 +33,7 @@ let cols = {
     url_imagen_usuario: {
         type: dataTypes.STRING,
         allowNull: true,
-        defaultValue:'/images/users/default-image.png'
+        defaultValue:'default-image.png'
         
     },
     telefono: {

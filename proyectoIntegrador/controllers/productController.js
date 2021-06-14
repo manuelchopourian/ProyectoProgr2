@@ -22,7 +22,7 @@ let productController = {
   store: (req,res) => {
     let productos = {
     nombre: req.body.nombre,
-    url_imagen_producto: req.body.url_imagen_producto,
+    url_imagen_producto: req.file.filename,
     marca: req.body.marca,
     descripcion: req.body.descripcion,
 
