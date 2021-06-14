@@ -58,5 +58,14 @@ timestamps: false,
 };
 
 const Users = sequelize.define(alias, cols , config);
+
+Users.associate = (models)=>{
+    // Relacion
+    Users.hasMany(models.Product, {
+        as: 'products', 
+        foreignKey: 'user_id'
+    })
+}
+
 return Users; 
  }
