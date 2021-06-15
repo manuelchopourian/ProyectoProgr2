@@ -32,6 +32,7 @@
 					
 				</article>
 				<div class="col-12 col-lg-4">
+					<h1>Publicado por: <a href="/profile/id/<%=producto.user.id %>"> <%= producto.user.nombre_usuario  %></a> </h1>
 					<section class="comments">
 						<% for (let i = 0; i < producto.comentarios; i++) { %>
 							<article>

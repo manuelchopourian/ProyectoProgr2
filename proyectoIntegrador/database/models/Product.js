@@ -53,6 +53,16 @@ underscored : true,
 };
 
 const Products = sequelize.define(alias, cols , config);
+
+Products.associate = (models)=>{
+    
+    Products.belongsTo(models.User, {
+        as: 'user', 
+        foreignKey: 'user_id'
+    })
+}
+
+
 return Products;
 
 

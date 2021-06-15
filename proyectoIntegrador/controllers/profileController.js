@@ -5,7 +5,11 @@ const db = require('../database/models');
 let profileController = {
   
    index: (req,res) =>{
-    db.User.findByPk(req.params.id)
+     let primaryKey = req.params.id;
+    db.User.findByPk(primaryKey)
+    /*, {
+      include: [{association: 'products'}]
+    })*/
     .then(perfil => res.render('profile', {perfil, productos}))
     .catch(err => console.log(err))
   },

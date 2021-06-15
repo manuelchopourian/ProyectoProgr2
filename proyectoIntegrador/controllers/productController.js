@@ -9,7 +9,10 @@ let productController = {
 
 
   porId: (req, res)=>{
-    db.Product.findByPk(req.params.id)
+    let primaryKey = req.params.id;
+    db.Product.findByPk(primaryKey, {
+      include: [{association: 'user'}]
+    })
         .then(producto => res.render('product', {producto, perfiles}))
         .catch(err => console.log(err));
   },
