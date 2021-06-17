@@ -1,18 +1,26 @@
-let productos = require('../data/products')
-
 const db = require('../database/models');
 
 let profileController = {
   
    index: (req,res) =>{
      let primaryKey = req.params.id;
-    db.User.findByPk(primaryKey)
-    /*, {
-      include: [{association: 'products'}]
-    })*/
-    .then(perfil => res.render('profile', {perfil, productos}))
-    .catch(err => console.log(err))
-  },
+    db.User.findByPk(primaryKey, {
+    include: [{association: 'products'}],
+    })
+    .then(perfil => {
+      db.User.findByPk(primaryKey, {
+        include: [{association: 'coments'}]
+      })
+        .then(coment => {   
+          res.render('profile',{perfil,coment})    
+        })
+      })
+      .catch(err => {
+        console.log(err)
+        res.render('error',{error: err})
+    })
+  
+},
 
   show : (req, res) => { 
     res.render('profile-edit'); 

@@ -11,14 +11,16 @@ let indexController = {
         order:[
           ['fecha_publicacion','DESC'],
         ],
-        limit:4
+        limit:4,
+        include: [{association: 'user'}]
       })
         .then(productos => {
           db.Product.findAll({
             order:[
               ['comentarios','DESC'],
             ],
-            limit:4
+            limit:4,
+            include: [{association: 'user'}]
           })
             .then(coment => {   
               res.render('index',{productos,coment})    
@@ -45,8 +47,8 @@ let indexController = {
             categoria: {[op.like]: `%${req.query.search}%`},
             marca: {[op.like]: `%${req.query.search}%`},
           },
-          
-        }
+        },
+        include: [{association: 'user'}]
     })
         .then(productos => {
           if(productos.length != 0){

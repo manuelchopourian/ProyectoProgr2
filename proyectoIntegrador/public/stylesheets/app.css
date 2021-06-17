@@ -218,6 +218,7 @@ hr {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .product-box_data h2 {

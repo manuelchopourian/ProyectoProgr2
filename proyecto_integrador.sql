@@ -44,7 +44,7 @@ insert into users values (2,'Juan', 'Martinez', 'juanmartinez', 'juanmartinez22@
 insert into users values (3,'Martin', 'Herrera', 'martinherrera', 'martinherrera21@gmail.com', 'casita', '1998-05-22', 'hombre3.jpeg' , '5411525068356' );
 insert into users values (4,'Manuel', 'Sanchez', 'manusanchez', 'manuelitosanchez@gmail.com', 'juanita', '1993-10-8', 'hombre4.jpg' , '5411529046189' );
 insert into users values (5,'Clara', 'Gonzalez', 'claragonzalez', 'claritagonzales@gmail.com', 'qwertyu', '1995-01-01', 'mujer1.jpg' , '5411507538579' );
-insert into users values (6,'Catalina', 'Rodriguez', 'catarotriguez', 'catrodriguez@gmail.com', 'abuela5', '1998-11-29', 'mujer2.jpg' , '5411515396084' );
+insert into users values (6,'Catalina', 'Rodriguez', 'catarodriguez', 'catrodriguez@gmail.com', 'abuela5', '1998-11-29', 'mujer2.jpg' , '5411515396084' );
 insert into users values (7,'Carla', 'Torres', 'carlatorres', 'carlitorres@gmail.com', 'mamita3', '1989-04-04', 'mujer3.jpg' , '5411574231964' );
 insert into users values (8,'Sofia', 'Lopez', 'sofilopez', 'sofilopez@gmail.com', 'pato123', '2001-08-03', 'mujer4.jpg' , '5411567412345' );
 

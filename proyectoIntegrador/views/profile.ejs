@@ -22,9 +22,9 @@
 				</div>
 				<div>
 					<ul class="datos-perfil">
-						<li><%= perfil.productos%></li>
+						<li><%= perfil.products.length%> productos</li>
 						<li><%= perfil.seguidores%></li>
-						<li><%= perfil.comentarios%></li>
+						<li><%= coment.coments.length%> comentarios</li>
 					</ul>
 				</div>
 			</div>
@@ -36,20 +36,28 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
+				<% if(perfil.products.length == 0) { %>
+				<h2 class='products-title'> No hay publicaciones</h2>
+				<% } else { %> 
 				<h2 class="products-title">Mis productos</h2>
+				<% } %> 
 			</div>
 			<!-- Show mis productos -->
-			<% for (let i = 0; i < 8; i++) { %>
+			<% for (let i = 0; i < perfil.products.length; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href='/product/id/<%= productos[i].id %>'>
+						<a href='/product/id/<%= perfil.products[i].id%>'>
 							<figure class="product-box_image">
-								<img src= "<%= productos[i].imagen %>"  alt="Camiseta Camiseta España Local">
+								<img src= "/images/products/<%=perfil.products[i].url_imagen_producto%>"  alt="<%= perfil.products[i].producto %> ">
 							</figure>
 							<article class="product-box_data">
-								<h2> <%= productos[i].categoria + " " + productos[i].nombre %> </h2>
-								<p><%= productos[i].descripcion  %> </p>
-								<p> <%= productos[i].comentarios %>  Comentarios</p>
+								<h2> <% if(perfil.products[i].categoria == null){ %> 
+									<%=perfil.products[i].nombre%>
+							   <% } else{ %> 
+								   <%=perfil.products[i].categoria + " " + perfil.products[i].nombre%>
+								   <% } %>  </h2>
+								<p><%= perfil.products[i].descripcion  %> </p>
+								<p> <%= perfil.products[i].comentarios %>  Comentarios</p>
 							</article>
 						</a>
 					</section>

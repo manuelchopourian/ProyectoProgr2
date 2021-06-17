@@ -31,5 +31,14 @@ let config = {
 };
 
 const Coments = sequelize.define(alias, cols , config);
+
+    Coments.associate = (models)=>{
+        
+        Coments.belongsTo(models.User, {
+            as: 'user', 
+            foreignKey: 'user_id'
+        })
+    }   
+
     return Coments;
 }

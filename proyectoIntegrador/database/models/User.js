@@ -64,6 +64,10 @@ Users.associate = (models)=>{
     Users.hasMany(models.Product, {
         as: 'products', 
         foreignKey: 'user_id'
+    }),
+    Users.hasMany(models.Coment, {
+        as: 'coments', 
+        foreignKey: 'user_id'
     })
 }
 
