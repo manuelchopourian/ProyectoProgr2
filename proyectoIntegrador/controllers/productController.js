@@ -7,13 +7,20 @@ let productController = {
   porId: (req, res)=>{
     let primaryKey = req.params.id;
     db.Product.findByPk(primaryKey, {
-      include: [{association: 'user'}, {association: 'coments'}]
+      include: [{association: 'user'}]
     })
         .then(producto => {
-          res.render('product',{producto})  
-      
+          db.Coment.findAll({
+            order:[
+              ['fecha_posteo','DESC'],
+            ],
+            where: {product_id: req.params.id},
+            include: [{association: 'user'}]
           })
-         
+          .then(comentarioUser => {
+            res.render('product',{producto, comentarioUser})  
+          })
+        })
         .catch(err => console.log(err));
 
   },

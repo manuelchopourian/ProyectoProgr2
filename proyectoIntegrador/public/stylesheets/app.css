@@ -234,7 +234,7 @@ hr {
   margin: 0 0 0 10px;
 }
 
-.product-box_data p {
+.product-box_data p{
   font-size: 12px;
   width: 100%;
   color: var(--gray);
@@ -377,6 +377,12 @@ hr {
 .product-detail-description {
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+.product-detail-publicado {
+  padding: 15px 15px 15px 40px;
+  font-size: 1.4em;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
 }

@@ -28,19 +28,19 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="/images/products/<%= producto.url_imagen_producto %> " alt="<%= producto.productos%>" class="product-detail-img">
 					<p class="product-detail-description"><%= producto.descripcion %>  </p>
+					<a class="product-detail-publicado" href="/profile/id/<%=producto.user.id %>"> Publicado por: <%= producto.user.nombre_usuario  %></a>
 					
 					
 				</article>
 				<div class="col-12 col-lg-4">
-					<h1>Publicado por: <a href="/profile/id/<%=producto.user.id %>"> <%= producto.user.nombre_usuario  %></a> </h1>
 					<section class="comments">
-						<% for (let i = 0; i < producto.coments.length; i++) { %>
+						<% for (let i = 0; i < comentarioUser.length; i++) { %>
 							<article>
-								<img src="/images/products/<%= producto.user.url_imagen_usuario %>"  alt="">
+								<img src="/images/profiles/<%= comentarioUser[i].user.url_imagen_usuario%>"  alt="">
 								<div class="data">
 									<p class="user">
-									<strong> <a href='/profile/id/<%= producto.coments[i].user_id %>  '><%=  %>:  </a> </strong>
-									 <%= producto.coments[i].comentario %> </p>
+									<strong> <a href='/profile/id/<%= comentarioUser[i].user_id %>  '><%= comentarioUser[i].user.nombre_usuario %>:  </a> </strong>
+									 <%= comentarioUser[i].comentario %> </p>
 								</div>
 								</a>
 							</article>
