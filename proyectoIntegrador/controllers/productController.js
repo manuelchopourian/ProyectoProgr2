@@ -7,10 +7,15 @@ let productController = {
   porId: (req, res)=>{
     let primaryKey = req.params.id;
     db.Product.findByPk(primaryKey, {
-      include: [{association: 'user'}]
+      include: [{association: 'user'}, {association: 'coments'}]
     })
-        .then(producto => res.render('product', {producto, perfiles}))
+        .then(producto => {
+          res.render('product',{producto})  
+      
+          })
+         
         .catch(err => console.log(err));
+
   },
 
     
@@ -55,11 +60,28 @@ let productController = {
       where:{
         id:req.params.id
       }
+    
     })
     .then(()=> res.redirect('/'))
     .catch(err => console.log(err))
   },
   
+
+    // comentario //
+comentar:(req,res)=> {
+    let comentarios = {
+
+      comentario: req.body.comentario,
+      user_id: req.session.user.id,
+      product_id: req.params.id
+      }
+        db.Coment.create(comentarios)
+        .then(()=> res.redirect('/'))
+        .catch(err => console.log(err))
+
+         },
+    
+
   edit:(req,res) =>{
     db.Product.findByPk(req.params.id)
     .then((productos)=> res.render('product-edit',{productos}))

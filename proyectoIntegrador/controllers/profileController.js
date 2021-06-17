@@ -5,15 +5,10 @@ let profileController = {
    index: (req,res) =>{
      let primaryKey = req.params.id;
     db.User.findByPk(primaryKey, {
-    include: [{association: 'products'}],
+    include: [{association: 'products'}, {association: 'coments'}],
     })
     .then(perfil => {
-      db.User.findByPk(primaryKey, {
-        include: [{association: 'coments'}]
-      })
-        .then(coment => {   
-          res.render('profile',{perfil,coment})    
-        })
+      res.render('profile',{perfil})   
       })
       .catch(err => {
         console.log(err)

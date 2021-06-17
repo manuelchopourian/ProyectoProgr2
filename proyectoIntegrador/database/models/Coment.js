@@ -37,8 +37,14 @@ const Coments = sequelize.define(alias, cols , config);
         Coments.belongsTo(models.User, {
             as: 'user', 
             foreignKey: 'user_id'
+        }),
+
+        Coments.belongsTo(models.Product, {
+            as: 'products', 
+            foreignKey: 'product_id'
         })
-    }   
+    }
+       
 
     return Coments;
 }

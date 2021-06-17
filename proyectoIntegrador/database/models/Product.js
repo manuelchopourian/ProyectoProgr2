@@ -59,8 +59,14 @@ Products.associate = (models)=>{
     Products.belongsTo(models.User, {
         as: 'user', 
         foreignKey: 'user_id'
+    }),
+
+    Products.hasMany(models.Coment, {
+        as: 'coments', 
+        foreignKey: 'product_id'
     })
 }
+
 
 
 return Products;
