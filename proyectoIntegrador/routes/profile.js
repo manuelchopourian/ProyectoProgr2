@@ -31,3 +31,16 @@ router.post('/delete/id/:id', profileController.destroy)
 module.exports = router;
 
 
+/*<div class="col-12">
+				<% if(locals.user.id == producto.user_id)){ %>
+                    <h2 class="products-title">¿Esta seguro qué desea eliminar su perfil?</h2>
+                    </div>
+                    <div class="respuesta">
+                    <form action="/profile/delete/id/<%= perfil.id %>" style="display: inline;" method="GET">
+                        <button type="submit" class="">Si</button>
+                    </form>
+                    <a href="/profile/id/<%= perfil.id %>">No</a>
+                    <% } else{ %> 
+                        <h2 class="products-title">Este perfil no te pertenece</h2>
+                        <% } %> 
+                    </div>*/

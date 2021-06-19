@@ -19,11 +19,13 @@ filename: function (req,file,cb)  {
 var upload = multer({storage : storage})
 
 router.get('/id/:id', productController.porId)
-router.post('/id/:id', productController.destroy)
+router.post('/id/:id', productController.comentar)
 router.get('/add', productController.add)
 router.post('/add', upload.single('url_imagen_producto'),productController.store)
 router.get('/edit/:id',productController.edit)
 router.post('/edit/:id',upload.single('url_imagen_producto'), productController.update)
+router.get('/delete/:id', productController.delete)
+router.post('/delete/:id', productController.destroy)
 
 
 

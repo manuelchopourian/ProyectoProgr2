@@ -62,15 +62,25 @@ let productController = {
           .catch(err => console.log(err))
       }
     },
-  destroy:(req,res) =>{
+  delete:(req,res) =>{
+
+      db.Product.findByPk(req.params.id)
+      .then((producto)=> res.render('product-delete',{producto}))
+      .catch(err => console.log(err))
+  },
+  destroy: (req,res) =>{
+
     db.Product.destroy({
-      where:{
-        id:req.params.id
-      }
-    
-    })
-    .then(()=> res.redirect('/'))
-    .catch(err => console.log(err))
+    where:{
+      id:req.params.id
+    }
+  
+  })
+  .then(()=> res.redirect('/'))
+  .catch(err => console.log(err))
+  
+
+
   },
   
 

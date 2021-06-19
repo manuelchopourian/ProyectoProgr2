@@ -17,9 +17,11 @@
 						<a href='/product/edit/<%= producto.id %>'>Editar Posteo</a>  
 						
 					</p>
-					<form action="/product/id/<%= producto.id %>" style="display: inline;" method="POST">
-						<button type="submit" class="borrado">Borrar Posteo</button>
-					</form>
+					<p class="product-detail-a">
+						<a href='/product/delete/<%= producto.id %>'>Borrar Posteo</a>  
+						
+					</p>
+					
 						<% } %>
 			
 		</div>

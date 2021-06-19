@@ -1,0 +1,24 @@
+<%- include('./partials/header')  %>
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			
+            <div class="col-12">
+				<% if(locals.user.id == producto.user_id){ %>
+				<h2 class="products-title">¿Esta seguro qué desea eliminar su producto?</h2>
+			</div>
+			<div class="respuesta">
+			<form action="/product/delete/<%= producto.id %>" style="display: inline;" method="POST">
+				<button type="submit" class="">Si</button>
+			</form>
+			<a href="/product/id/<%= producto.id %>">No</a>
+			<% } else{ %> 
+				<h2 class="products-title">Este Producto no te pertenece</h2>
+				<% } %> 
+			</div>
+        </div>
+			
+			
+
+	<%- include('./partials/footer')  %> 
