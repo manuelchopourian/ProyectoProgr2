@@ -68,6 +68,10 @@ Users.associate = (models)=>{
     Users.hasMany(models.Coment, {
         as: 'coments', 
         foreignKey: 'user_id'
+    }),
+    Users.hasMany(models.Favorite, {
+        as: 'favorites', 
+        foreignKey: 'user_id'
     })
 }
 

@@ -60,9 +60,12 @@ Products.associate = (models)=>{
         as: 'user', 
         foreignKey: 'user_id'
     }),
-
     Products.hasMany(models.Coment, {
         as: 'coments', 
+        foreignKey: 'product_id'
+    })
+    Products.hasMany(models.Favorite, {
+        as: 'favorites', 
         foreignKey: 'product_id'
     })
 }

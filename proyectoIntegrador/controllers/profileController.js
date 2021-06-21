@@ -5,11 +5,18 @@ let profileController = {
    index: (req,res) =>{
      let primaryKey = req.params.id;
     db.User.findByPk(primaryKey, {
-    include: [{association: 'products'}, {association: 'coments'}],
+    include: [{association: 'products'}, {association: 'coments'}, {association: 'favorites'}],
     })
     .then(perfil => {
-      res.render('profile',{perfil})   
+      db.Favorite.findAll({
+        where:{
+          user_id:req.params.id
+        },
+        include: {association: 'products'}
       })
+      .then((favoritos)=>
+      res.render('profile',{perfil,favoritos})   
+      )})
       .catch(err => {
         console.log(err)
         res.render('error',{error: err})
@@ -80,6 +87,10 @@ let profileController = {
         user_id:req.params.id
       }
     })
+    .then(()=>
+    db.Favorite.destroy({where:{
+      user_id:req.params.id
+    }}) 
     .then(()=> 
     db.Product.destroy({
       where:{
@@ -93,9 +104,42 @@ let profileController = {
       }
     })
     .then(()=> res.redirect('/'))
-    ))
+    )))
     .catch(err => console.log(err))
-}
+},
+  favoritos:(req,res) => {
+    if(req.session.user != undefined){
+    db.Favorite.findAll({
+      where:{
+        user_id: req.session.user.id
+      },
+      include: {association: 'products'}
+    })
+    .then((favoritos)=> {
+     return res.render('favorite', {favoritos})
+   })}
+  else {
+      return res.redirect('/')
+  }   
+    
+  },
+  addFav:(req,res) =>{
+  if(req.session.user != undefined ){
+      res.render('favorite-add')
+    }
+    else{
+      res.redirect('/')
+    }
+},
+  crear:(req,res) =>{
+    let favorito = {
+      user_id: req.session.user.id,
+      product_id: req.params.id
+    }
+    db.Favorite.create(favorito)
+        .then(()=> res.redirect('/profile/favorites'))
+        .catch(err => console.log(err))
+  }
 
 
 }

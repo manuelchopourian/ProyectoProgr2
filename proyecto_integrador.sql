@@ -94,3 +94,11 @@ INSERT INTO `proyecto_integrador`.`coments` (`id`, `comentario`, `fecha_posteo`,
 ALTER TABLE `proyecto_integrador`.`users` 
 ADD COLUMN `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `telefono`,
 ADD COLUMN `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP AFTER `created_at`;
+
+create table favorites (
+id int primary key auto_increment,
+user_id int not null,
+product_id int not null,
+foreign key (user_id) references users(id),
+foreign key (product_id) references products(id)
+);
