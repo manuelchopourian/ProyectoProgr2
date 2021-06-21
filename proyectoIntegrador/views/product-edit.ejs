@@ -4,15 +4,10 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<% if(locals.user.id == productos.user_id){ %>
 					<h2 class="products-title">Editar Producto</h2>
-					<% } else { %>
-						<h2 class="products-title">Este producto no te pertenece</h2>
-					<% }%>
 	
 			</div>
 			<!-- Show the "ultimos" products -->
-			<% if(locals.user.id == productos.user_id){ %>
 			<div class="agregarProducto">
 			<form class="infoProduct" action="/product/edit/<%= productos.id %> " method="POST" enctype="multipart/form-data">
 				<p>
@@ -33,6 +28,5 @@
 				
 			</form>
 			</div>
-			<% }%>
 
 	<%- include('./partials/footer')  %> 

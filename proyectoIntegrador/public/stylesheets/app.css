@@ -222,7 +222,7 @@ hr {
 }
 
 .product-box_data h2 {
-  font-size: 2.8vh;
+  font-size: 2.7vh;
   font-weight: 550;
   margin: auto;
 }
@@ -484,6 +484,7 @@ hr {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  object-fit: cover;
 }
 .comments .data{
   width: 85%;
@@ -500,6 +501,11 @@ hr {
 }
 .comments .user a{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.trash{
+  width: 100%;
+  text-align: right;
+  font-size: 14px;
 }
 
 /*====== Formularios ======*/

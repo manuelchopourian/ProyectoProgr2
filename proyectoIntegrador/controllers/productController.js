@@ -1,8 +1,7 @@
-let  perfiles = require('../data/profileData')
+const e = require('express');
 const db = require('../database/models');
 
 let productController = {
-
 
   porId: (req, res)=>{
     let primaryKey = req.params.id;
@@ -24,12 +23,14 @@ let productController = {
         .catch(err => console.log(err));
 
   },
-
-    
   add : (req, res) => { 
+    if(req.session.user != undefined){
     res.render('product-add'); 
+    }
+    else{
+      res.redirect('/')
+    }
     },
-  
   store: (req,res) => {
     let errors = {};
         //chequear los campos obligatorios
@@ -65,43 +66,76 @@ let productController = {
   delete:(req,res) =>{
 
       db.Product.findByPk(req.params.id)
-      .then((producto)=> res.render('product-delete',{producto}))
+      .then((producto)=> {
+        if(req.session.user != undefined && producto.user_id == req.session.user.id ){
+          res.render('product-delete',{producto})
+        }
+        else{
+          res.redirect('/')
+        }
+        })
       .catch(err => console.log(err))
   },
   destroy: (req,res) =>{
-
-    db.Product.destroy({
+    db.Coment.destroy({
     where:{
-      id:req.params.id
+      product_id:req.params.id
     }
   
   })
-  .then(()=> res.redirect('/'))
+  .then(()=> 
+  db.Product.destroy({
+    where:{
+      id:req.params.id
+    }
+  })
+  .then(() => res.redirect('/'))
+  )
   .catch(err => console.log(err))
-  
-
-
-  },
-  
-
+},
     // comentario //
 comentar:(req,res)=> {
-    let comentarios = {
-
-      comentario: req.body.comentario,
-      user_id: req.session.user.id,
-      product_id: req.params.id
+      if(req.session.user != undefined){
+        let comentando = {
+          comentario: req.body.comentario,
+          user_id: req.session.user.id,
+          product_id: req.params.id
+          }
+          db.Coment.create(comentando)
+          .then(()=>
+          db.Coment.findAll({
+            where: {product_id: req.params.id},
+          })
+          .then(comentarioUser => {
+            let actualizacion = {
+              comentarios: comentarioUser.length
+          }
+          db.Product.update(actualizacion, {
+            where:{
+              id:req.params.id
+            }
+          })
+          .then(()=> res.redirect('/product/id/' + comentando.product_id))
+          .catch(err => console.log(err))
+        }))}
+        
+        
+      else{
+        res.redirect('/login')
       }
-        db.Coment.create(comentarios)
-        .then(()=> res.redirect('/'))
-        .catch(err => console.log(err))
+        
 
-         },
-    
-
+  },
   edit:(req,res) =>{
     db.Product.findByPk(req.params.id)
-    .then((productos)=> res.render('product-edit',{productos}))
+    .then((productos)=>{
+      if(req.session.user != undefined && productos.user_id == req.session.user.id ){
+      res.render('product-edit',{productos})
+      }
+      else{
+        res.redirect('/')
+      }
+    })
     .catch(err => console.log(err))
   },
   update:(req,res) =>{
@@ -123,7 +157,48 @@ comentar:(req,res)=> {
     .then(()=> res.redirect('/'))
     .catch(err => console.log(err))
   },
-  
+  actualizar:(req,res) =>{
+    db.Coment.findByPk(req.params.id)
+    .then((comentario)=> {
+      if(req.session.user != undefined && comentario.user_id == req.session.user.id ){
+      res.render('coment-delete',{comentario})
+    }
+    else{
+      res.redirect('/')
+    }
+  })
+
+    .catch(err => console.log(err))
+},
+  eliminar: (req,res) =>{
+    db.Coment.findByPk(req.params.id)
+    .then((productoId)=>
+        db.Coment.destroy({
+          where:{
+            id:req.params.id
+          }
+        }) 
+    .then(() => {
+      db.Coment.findAll({
+        where: {product_id: productoId.product_id},
+      })
+      .then((comentarioUser)=> {
+      let actualizacion = {
+      comentarios: comentarioUser.length
+    }
+    db.Product.update(actualizacion, {
+      where:{
+        id: productoId.product_id
+      }
+    })  
+      .then(()=> res.redirect('/product/id/' + productoId.product_id))
+      .catch(err => console.log(err))
+    
+   })
+  })
+  )
+}
+
 }
     
  module.exports = productController;

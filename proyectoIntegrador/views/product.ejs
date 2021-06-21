@@ -17,7 +17,7 @@
 						<a href='/product/edit/<%= producto.id %>'>Editar Posteo</a>  
 						
 					</p>
-					<p class="product-detail-a">
+					<p class="borrado">
 						<a href='/product/delete/<%= producto.id %>'>Borrar Posteo</a>  
 						
 					</p>
@@ -43,12 +43,18 @@
 									<p class="user">
 									<strong> <a href='/profile/id/<%= comentarioUser[i].user_id %>  '><%= comentarioUser[i].user.nombre_usuario %>:  </a> </strong>
 									 <%= comentarioUser[i].comentario %> </p>
+									 
+									 <% if(locals.user == undefined){ %>
+									<% } else if (locals.user.id == comentarioUser[i].user_id){%>
+									 <a href='/product/coment/delete/<%= comentarioUser[i].id %>' class="trash"><i class="fas fa-trash"></i></a> 
+									 <% } %>
+									 
 								</div>
 								</a>
 							</article>
 						<%  } %> 
 					</section>
-					<form class="form" action="" method="POST">
+					<form class="form" action="/product/id/<%= producto.id  %> " method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>

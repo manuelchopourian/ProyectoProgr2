@@ -12,15 +12,16 @@ let indexController = {
           ['fecha_publicacion','DESC'],
         ],
         limit:4,
-        include: [{association: 'user'}]
+        include: [{association: 'user'}, {association: 'coments'}]
       })
         .then(productos => {
           db.Product.findAll({
+            include: [{association: 'user'},{association: 'coments'}],
             order:[
               ['comentarios','DESC'],
             ],
             limit:4,
-            include: [{association: 'user'}]
+            
           })
             .then(coment => {   
               res.render('index',{productos,coment})    
@@ -39,16 +40,16 @@ let indexController = {
     db.Product.findAll({
         order:[
           ['comentarios','DESC'],
-        ],
+        ], include: [{association: 'user'}],
         where: {
           [op.or]:{ 
             nombre: {[op.like]: `%${req.query.search}%`},
             descripcion: {[op.like]: `%${req.query.search}%`},
             categoria: {[op.like]: `%${req.query.search}%`},
             marca: {[op.like]: `%${req.query.search}%`},
+            
           },
         },
-        include: [{association: 'user'}]
     })
         .then(productos => {
           if(productos.length != 0){

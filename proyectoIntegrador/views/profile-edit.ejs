@@ -4,16 +4,11 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<% if(locals.user.id == perfil.id){ %>
 				<h2 class="products-title">Editar mi perfil</h2>
-				<% } else { %>
-					<h2 class="products-title">Este perfil no te pertenece</h2>
-				<% }%>
 
 			</div>
 			
 			<!-- Show the "ultimos" products -->
-			<% if(locals.user.id == perfil.id){ %>
 
 			<form class="registrado" action="/profile/edit/id/<%= perfil.id %> " method="POST" enctype="multipart/form-data">
 				<div class="dataRegistro">
@@ -42,7 +37,6 @@
 				<a href='/profile/delete/id/<%= perfil.id %> ' class="perfil-borrado">Borrar perfil</a>
 				
 			</form>
-			<% }%>
 			
 
 

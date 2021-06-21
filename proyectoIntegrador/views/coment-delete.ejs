@@ -5,13 +5,13 @@
 		<div class="row">
 			
             <div class="col-12">
-				<h2 class="products-title">¿Esta seguro qué desea eliminar su producto?</h2>
+				<h2 class="products-title">¿Esta seguro qué desea eliminar su comentario?</h2>
 			</div>
 			<div class="respuesta">
-			<form action="/product/delete/<%= producto.id %>" style="display: inline;" method="POST">
+			<form action="/product/coment/delete/<%= comentario.id %>" style="display: inline;" method="POST">
 				<button type="submit" class="">Si</button>
 			</form>
-			<a href="/product/id/<%= producto.id %>">No</a>
+			<a href="/product/id/<%= comentario.product_id %>">No</a>
 			</div>
         </div>
 			

@@ -94,7 +94,3 @@ INSERT INTO `proyecto_integrador`.`coments` (`id`, `comentario`, `fecha_posteo`,
 ALTER TABLE `proyecto_integrador`.`users` 
 ADD COLUMN `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `telefono`,
 ADD COLUMN `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP AFTER `created_at`;
-
-
-
-NULL DEFAULT 'default-value.png',

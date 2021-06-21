@@ -4,7 +4,6 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<% if(locals.user.id == perfil.id){ %>
 				<h2 class="products-title">¿Esta seguro qué desea eliminar su perfil?</h2>
 			</div>
 			<div class="respuesta">
@@ -12,9 +11,7 @@
 				<button type="submit" class="">Si</button>
 			</form>
 			<a href="/profile/id/<%= perfil.id %>">No</a>
-			<% } else{ %> 
-				<h2 class="products-title">Este perfil no te pertenece</h2>
-				<% } %> 
+		
 			</div>
 			
 

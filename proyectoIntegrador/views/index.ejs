@@ -34,7 +34,7 @@
 
 							</h2>
 							<p><%= productos[i].descripcion  %> </p>
-							<p> <%= productos[i].comentarios %>  Comentarios</p>
+							<p> <%= productos[i].coments.length %>  Comentarios</p>
 							<p><a href="/profile/id/<%=productos[i].user.id %>"> Publicado por: <%= productos[i].user.nombre_usuario  %></a></p>
 						</article>
 					</a>
@@ -67,7 +67,7 @@
 	
 								</h2>
 								<p><%= coment[i].descripcion  %> </p>
-								<p> <%= coment[i].comentarios %>  Comentarios</p>
+								<p> <%= coment[i].coments.length %>  Comentarios</p>
 								<p>Publicado por: <a href="/profile/id/<%=coment[i].user.id %>"> <%= coment[i].user.nombre_usuario  %></a> </p>
 							</article>
 						</a>

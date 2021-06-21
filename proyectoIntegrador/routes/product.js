@@ -26,6 +26,8 @@ router.get('/edit/:id',productController.edit)
 router.post('/edit/:id',upload.single('url_imagen_producto'), productController.update)
 router.get('/delete/:id', productController.delete)
 router.post('/delete/:id', productController.destroy)
+router.get('/coment/delete/:id', productController.actualizar)
+router.post('/coment/delete/:id', productController.eliminar)
 
 
 

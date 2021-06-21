@@ -23,7 +23,14 @@ let profileController = {
 
    edit:(req,res) =>{
     db.User.findByPk(req.params.id)
-    .then((perfil)=> res.render('profile-edit',{perfil}))
+    .then((perfil)=> {
+      if(req.session.user != undefined && perfil.id == req.session.user.id ){
+        res.render('profile-edit',{perfil})
+      }
+      else{
+        res.redirect('/')
+      }
+    })
     .catch(err => console.log(err))
   },
   update:(req,res) =>{
@@ -53,7 +60,14 @@ let profileController = {
   },
   delete:(req,res) =>{
     db.User.findByPk(req.params.id)
-    .then((perfil)=> res.render('profile-delete',{perfil}))
+    .then((perfil)=> {
+      if(req.session.user != undefined && perfil.id == req.session.user.id ){
+      res.render('profile-delete',{perfil})
+      }
+      else{
+        res.redirect('/')
+      }
+    })
     .catch(err => console.log(err))
   },
 
@@ -61,14 +75,28 @@ let profileController = {
     req.session.destroy();
     res.clearCookie('userID')
     res.redirect('/')
+    db.Coment.destroy({
+      where:{
+        user_id:req.params.id
+      }
+    })
+    .then(()=> 
+    db.Product.destroy({
+      where:{
+        user_id:req.params.id
+      }
+    })
+    .then(() =>  
     db.User.destroy({
       where:{
         id:req.params.id
       }
     })
     .then(()=> res.redirect('/'))
+    ))
     .catch(err => console.log(err))
-  },
+}
+
 
 }
  
