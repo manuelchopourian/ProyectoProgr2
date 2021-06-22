@@ -19,16 +19,17 @@
 					</p>
 					<p class="borrado">
 						<a href='/product/delete/<%= producto.id %>'>Borrar Posteo</a>  
-						
 					</p>
-					
 						<% } %>
-
-						
-			
+						<% if(locals.user != undefined && locals.user.id != producto.user_id){ %>
+							<% if(favoritos.length == 0){ %>
+							<a href='/profile/favorites/add/<%= producto.id %>' class="favorito">Agregar a Favoritos</a>
+							<% } else{ %>
+							<a href='/profile/favorites/add/<%= producto.id %>' class="favorito">Quitar de Favoritos</a>
+							<% } %>
+						<% } %>
 		</div>
 		<div class="product-detail">
-			<a href='/profile/favorites/add/<%= producto.id %>'>Agregar a Favoritos</a>
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="/images/products/<%= producto.url_imagen_producto %> " alt="<%= producto.productos%>" class="product-detail-img">
@@ -47,9 +48,8 @@
 									<strong> <a href='/profile/id/<%= comentarioUser[i].user_id %>  '><%= comentarioUser[i].user.nombre_usuario %>:  </a> </strong>
 									 <%= comentarioUser[i].comentario %> </p>
 									 
-									 <% if(locals.user == undefined){ %>
-									<% } else if (locals.user.id == comentarioUser[i].user_id){%>
-									 <a href='/product/coment/delete/<%= comentarioUser[i].id %>' class="trash"><i class="fas fa-trash"></i></a> 
+									 <% if(locals.user != undefined && locals.user.id == comentarioUser[i].user_id){ %>
+										 <a href='/product/coment/delete/<%= comentarioUser[i].id %>' class="trash"><i class="fas fa-trash"></i></a> 
 									 <% } %>
 									 
 								</div>

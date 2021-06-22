@@ -10,22 +10,24 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"><%= perfil.nombre_usuario%>
-						<% if(locals.user == undefined){ %>
-			
-						<% } else if (locals.user.id == perfil.id){%>
-								<a href='/profile/edit/id/<%= locals.user.id %> '>
-									<i class="fas fa-cog"></i>
-								</a>
-								<% } %>
+						<% if(locals.user != undefined && locals.user.id == perfil.id){ %>
+							<a href='/profile/edit/id/<%= locals.user.id %> '>
+								<i class="fas fa-cog"></i>
+							</a>			
+						<% } %>
 					</h1>
-					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
+					<% if(locals.user != undefined && locals.user.id != perfil.id){ %>
+						<a class="btn mt-3 ml-4" href="">SEGUIR</a>	
+					<% } %>
 				</div>
 				<div>
 					<ul class="datos-perfil">
 						<li><%= perfil.products.length%> productos</li>
 						<li><%= perfil.seguidores%></li>
 						<li><%= perfil.coments.length%> comentarios</li>
+						<% if(locals.user != undefined && locals.user.id == perfil.id){ %> 
 						<li><%= favoritos.length%> favoritos</li>
+						<% } %>
 					</ul>
 				</div>
 			</div>

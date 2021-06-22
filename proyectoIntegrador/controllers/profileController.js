@@ -109,15 +109,17 @@ let profileController = {
 },
   favoritos:(req,res) => {
     if(req.session.user != undefined){
+    
     db.Favorite.findAll({
       where:{
         user_id: req.session.user.id
       },
       include: {association: 'products'}
     })
-    .then((favoritos)=> {
-     return res.render('favorite', {favoritos})
-   })}
+      .then((favoritos)=> { return res.render('favorite', {favoritos})
+    })
+     
+   }
   else {
       return res.redirect('/')
   }   
@@ -125,13 +127,29 @@ let profileController = {
   },
   addFav:(req,res) =>{
   if(req.session.user != undefined ){
-      res.render('favorite-add')
+    db.Favorite.findAll({
+      where: {
+        product_id: req.params.id,
+        user_id: req.session.user.id
+      },
+    })
+    .then((filtro)=>
+      res.render('favorite-add',{filtro})
+    )
     }
     else{
       res.redirect('/')
     }
 },
   crear:(req,res) =>{
+    db.Favorite.findAll({
+      where: {
+        product_id: req.params.id,
+        user_id: req.session.user.id
+      },
+    })
+    .then((filtro)=> {
+    if(filtro.length == 0){
     let favorito = {
       user_id: req.session.user.id,
       product_id: req.params.id
@@ -139,6 +157,17 @@ let profileController = {
     db.Favorite.create(favorito)
         .then(()=> res.redirect('/profile/favorites'))
         .catch(err => console.log(err))
+    }
+    else{
+      db.Favorite.destroy({
+        where:{ 
+          product_id:req.params.id,
+          user_id: req.session.user.id
+      }})
+      .then(()=> res.redirect('/profile/favorites'))
+      .catch(err => console.log(err))
+    }
+    })
   }
 
 

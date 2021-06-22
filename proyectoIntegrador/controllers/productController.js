@@ -17,7 +17,18 @@ let productController = {
             include: [{association: 'user'}]
           })
           .then(comentarioUser => {
-            res.render('product',{producto, comentarioUser})  
+            if(req.session.user == undefined){
+              res.render('product',{producto, comentarioUser})
+            }
+            else{
+              db.Favorite.findAll({
+                where: {
+                  product_id: req.params.id,
+                  user_id: req.session.user.id
+                },
+              })
+              .then((favoritos)=>res.render('product',{producto, comentarioUser, favoritos}))
+            }
           })
         })
         .catch(err => console.log(err));
@@ -81,8 +92,11 @@ let productController = {
     where:{
       product_id:req.params.id
     }
-  
   })
+  .then(()=>
+    db.Favorite.destroy({where:{
+      product_id:req.params.id
+    }}) 
   .then(()=> 
   db.Product.destroy({
     where:{
@@ -90,7 +104,7 @@ let productController = {
     }
   })
   .then(() => res.redirect('/'))
-  )
+  ))
   .catch(err => console.log(err))
 },
     // comentario //

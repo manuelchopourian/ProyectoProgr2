@@ -5,8 +5,12 @@
 		<div class="row">
 			
             <div class="col-12">
-				<h2 class="products-title">¿Desea añadir este producto a favoritos?</h2>
-			</div>
+				<% if(filtro.length == 0){ %>
+					<h2 class="products-title">¿Desea añadir este producto a favoritos?</h2>
+					<% } else{ %>
+						<h2 class="products-title">¿Desea eliminar este producto a favoritos?</h2>
+					<% } %>
+				</div>
 			<div class="respuesta">
 			<form action="" style="display: inline;" method="POST">
 				<button type="submit" class="">Si</button>
