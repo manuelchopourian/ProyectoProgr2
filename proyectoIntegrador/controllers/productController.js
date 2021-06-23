@@ -211,6 +211,24 @@ comentar:(req,res)=> {
    })
   })
   )
+},
+
+todos: (req,res) => {
+
+    db.Product.findAll({
+      include: [{association: 'user'}, {association: 'coments'}]
+    })
+      .then(productos => {
+          res.render('all-products',{productos})    
+          
+        })
+      .catch(err => {
+          console.log(err)
+          res.render('error',{error: err})
+      })
+      
+  
+
 }
 
 }

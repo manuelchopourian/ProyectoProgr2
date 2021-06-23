@@ -28,7 +28,7 @@ router.get('/delete/:id', productController.delete)
 router.post('/delete/:id', productController.destroy)
 router.get('/coment/delete/:id', productController.actualizar)
 router.post('/coment/delete/:id', productController.eliminar)
-
+router.get('/all-products', productController.todos)
 
 
 

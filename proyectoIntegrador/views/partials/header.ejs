@@ -13,6 +13,10 @@
 	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
 	<link rel="stylesheet" href="/stylesheets/app.css">
+    <!-- Carrousel -->
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    
 </head>
 <body>
@@ -49,7 +53,7 @@
 
         <nav class="main-navbar">
             <ul class="left-navbar">
-                <li><a href='/'>Todos los productos</a></li>
+                <li><a href='/product/all-products'>Todos los productos</a></li>
                 <% if(locals.user){ %>
                 <li><a href='/product/add'>Cargar productos</a></li>
                 <li><a href='/profile/favorites'>Mis favoritos</a></li>
