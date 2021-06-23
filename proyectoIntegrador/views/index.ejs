@@ -12,8 +12,8 @@
 	/* Slideshow container */
 	.slideshow-container {
 	  max-width: 1000px;
+	  position: relative;
 	  margin: 10px;
-	  align-items: center;
 	}
 	
 	/* Next & previous buttons */
@@ -45,13 +45,15 @@
 	
 	/* Caption text */
 	.text {
-	  color: #f2f2f2;
+	  color: #0e0d0d;
 	  font-size: 15px;
 	  padding: 8px 12px;
 	  position: absolute;
 	  bottom: 8px;
 	  width: 100%;
 	  text-align: center;
+	  font-weight: bold;
+	  font-family: var(--base-font-family);
 	}
 	
 	/* Number text (1/3 etc) */
@@ -86,6 +88,11 @@
 	  animation-name: fade;
 	  animation-duration: 1.5s;
 	}
+
+	.foto-carrousel{
+		width: fit-content;
+		object-fit: cover;
+	}
 	
 	@-webkit-keyframes fade {
 	  from {opacity: .4} 
@@ -109,20 +116,20 @@
 	
 	<div class="mySlides fade">
 	  <div class="numbertext">1 / 3</div>
-	  <img src="images/banners/bannerFila.jpg" style="width:100%">
-	  <div class="text">Caption Text</div>
+	  <img class="foto-carrousel" src="images/banners/bannerFila.jpg">
+	  <div class="text"><a href="/product/all-products">Encontra Todo tipo de productos deportivos</a></div>
 	</div>
 	
 	<div class="mySlides fade">
 	  <div class="numbertext">2 / 3</div>
-	  <img src="images/banners/bannerFila.jpg" style="width:100%">
-	  <div class="text">Caption Two</div>
+	  <img class="foto-carrousel" src="http://2.bp.blogspot.com/-On3BlGDU3PM/U4OlYl7YO5I/AAAAAAAABDM/CqK8MW_VUU4/w1200-h630-p-k-no-nu/Nike+World+Cup+2014.jpg"  >
+	  <div class="text"><a href="/register">¡ Creá tu cuenta de Manera facil y gratuita !</a> </div>
 	</div>
 	
 	<div class="mySlides fade">
 	  <div class="numbertext">3 / 3</div>
-	  <img src="images/banners/bannerFila.jpg" style="width:100%">
-	  <div class="text">Caption Three</div>
+	  <img class="foto-carrousel" src="http://1.bp.blogspot.com/-uOSEsJiGSEI/U4OpjtYQPjI/AAAAAAAABD4/CtUP1FdYNJw/s1600/Nike+Hypervenom+World+Cup.jpg" >
+	  <div class="text"><a href="/login">¿Ya tenes cuenta? Inicia Sesión y publica tus productos</a></div>
 	</div>
 	
 	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -166,14 +173,6 @@
 	}
 	</script>
 	
-
-
-<!-- fin carrousel -->
-	<!-- Banner -->
-	<%- /*<div class="banner">
-		<img src="images/banners/bannerFila.jpg" alt="Banner de ofertas">
-	</div>*/  %> 
-	<!-- /Banner -->
 
 	<!-- Novedades -->
 
