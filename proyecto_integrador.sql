@@ -102,3 +102,24 @@ product_id int not null,
 foreign key (user_id) references users(id),
 foreign key (product_id) references products(id)
 );
+create table follows (
+id int primary key auto_increment,
+user_id int not null,
+following_id int not null,
+foreign key (user_id) references users(id),
+foreign key (following_id) references users(id)
+);
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('1', '2', '3');
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('2', '3', '5');
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('3', '6', '7');
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('4', '1', '8');
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('5', '4', '1');
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('6', '7', '2');
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('7', '5', '4');
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('8', '8', '6');
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('9', '2', '5');
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('10', '2', '7');
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('11', '3', '7');
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('12', '3', '8');
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('13', '4', '5');
+INSERT INTO `proyecto_integrador`.`follows` (`id`, `user_id`, `following_id`) VALUES ('14', '1', '5');

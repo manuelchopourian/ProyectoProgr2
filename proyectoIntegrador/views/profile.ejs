@@ -17,7 +17,13 @@
 						<% } %>
 					</h1>
 					<% if(locals.user != undefined && locals.user.id != perfil.id){ %>
-						<a class="btn mt-3 ml-4" href="">SEGUIR</a>	
+						<form class="" action="" method="POST">
+						<% if(filtro.length == 0){ %>
+							<button type="submit" class="btn mt-3 ml-4">SEGUIR</button>
+						<% } else{ %>
+							<button type="submit" class="siguiendo">SIGUIENDO</button>
+						<% } %>
+						</form>
 					<% } %>
 				</div>
 				<div>
@@ -25,9 +31,8 @@
 						<li><%= perfil.products.length%> productos</li>
 						<li><%= perfil.seguidores%></li>
 						<li><%= perfil.coments.length%> comentarios</li>
-						<% if(locals.user != undefined && locals.user.id == perfil.id){ %> 
-						<li><%= favoritos.length%> favoritos</li>
-						<% } %>
+						<li><%= follow.length%> <a href="/profile/followers/<%= perfil.id %> "> seguidores</a></li> 
+						<li><%= following.length%>	<a href="/profile/following/<%= perfil.id %>"> seguidos</a></li>
 					</ul>
 				</div>
 			</div>
