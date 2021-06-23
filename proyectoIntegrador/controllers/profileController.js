@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const op = db.Sequelize.Op;
 
 let profileController = {
   
@@ -15,15 +16,69 @@ let profileController = {
         include: {association: 'products'}
       })
       .then((favoritos)=>
-      res.render('profile',{perfil,favoritos})   
-      )})
+        db.Follow.findAll({
+          where: {
+            user_id: req.params.id
+            }
+        })
+        .then((following)=>
+        db.Follow.findAll({
+          where: {
+            following_id: req.params.id
+            }
+        })
+      .then((follow)=> {
+      if(req.session.user != undefined){
+        db.Follow.findAll({
+        where: {
+        user_id: req.session.user.id,
+        following_id: req.params.id
+        }
+        })
+        .then((filtro)=>
+         res.render('profile',{perfil,favoritos, filtro, follow, following})   
+      )}
+       else{
+        res.render('profile',{perfil,favoritos, follow, following})  
+       }
+    })
+    ))})
       .catch(err => {
         console.log(err)
         res.render('error',{error: err})
     })
   
 },
-
+  follow:(req,res) =>{
+    db.Follow.findAll({
+      where: {
+      user_id: req.session.user.id,
+      following_id: req.params.id
+      }
+    })
+    .then((filtro)=> {
+    if(filtro.length == 0){
+      let followers = {
+        user_id: req.session.user.id,
+        following_id: req.params.id
+        }
+      db.Follow.create(followers)
+      .then(()=> res.redirect('/profile/id/' + req.params.id))
+      .catch(err => console.log(err))
+    }
+    else{
+      db.Follow.destroy({
+        where:{ 
+          user_id: req.session.user.id,
+          following_id: req.params.id
+        }
+      })
+      .then(()=> res.redirect('/profile/id/' + req.params.id))
+      .catch(err => console.log(err))
+    }
+    })
+    
+  },
   show : (req, res) => { 
     res.render('profile-edit'); 
    },
@@ -82,16 +137,28 @@ let profileController = {
     req.session.destroy();
     res.clearCookie('userID')
     res.redirect('/')
+
     db.Coment.destroy({
       where:{
-        user_id:req.params.id
+          user_id:req.params.id,
+    }
+    })
+      .then(()=>
+    db.Favorite.destroy({
+      where:{
+        user_id:req.params.id,
+     
+    }}) 
+    .then(()=> 
+    db.Follow.destroy({
+      where:{
+        [op.or]:{ 
+          user_id: req.params.id,
+          following_id:req.params.id, 
+        },
       }
     })
     .then(()=>
-    db.Favorite.destroy({where:{
-      user_id:req.params.id
-    }}) 
-    .then(()=> 
     db.Product.destroy({
       where:{
         user_id:req.params.id
@@ -104,7 +171,7 @@ let profileController = {
       }
     })
     .then(()=> res.redirect('/'))
-    )))
+    ))))
     .catch(err => console.log(err))
 },
   favoritos:(req,res) => {
@@ -168,9 +235,56 @@ let profileController = {
       .catch(err => console.log(err))
     }
     })
-  }
-
-
+  },
+  seguidos:(req,res) => {
+    if(req.session.user != undefined){
+    db.Follow.findAll({
+      where:{
+        user_id: req.params.id
+      },
+      include: {association: 'following'}
+    })
+      .then((follow)=>{ 
+        db.User.findOne({
+          where:{
+            id: req.params.id
+          },
+        })
+        .then((usuario)=> {
+        return res.render('following', {follow, usuario})
+        })
+    }) 
+   }
+    else {
+      return res.redirect('/')
+    }  
+  },
+  seguidores:(req,res) => {
+    if(req.session.user != undefined){
+    db.Follow.findAll({
+      where:{
+        following_id: req.params.id
+      },
+      include: {association: 'users'}
+    })
+      .then((follow)=> { 
+        db.User.findOne({
+          where:{
+            id: req.params.id
+          },
+        })
+        .then((usuario)=> {
+        return res.render('followers', {follow, usuario})
+        })
+        
+    })
+     
+   }
+  else {
+      return res.redirect('/')
+  }  
+    
+  },
 }
  
  module.exports = profileController;

@@ -652,10 +652,19 @@ input{
   padding: 10px 20px;
   border-radius: 4px;
   color: #fff;
+  border: none;
+}
+.siguiendo{
+  background-color: var(--light-blue);
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: #fff;
+  border: none;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 .datos-perfil{
-  position: relative;
-  right: 15vw;
+  text-align: left;
 }
 .respuesta{
   display: grid;
@@ -696,7 +705,24 @@ input{
   margin-top: 20px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+.profile-box a{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  margin-bottom: 20px;
+}
+.profile-box a img{
+  border-radius: 50%;
+  object-fit: cover;
+  width:60px;
+  height: 60px;
+}
+.profile-box_data{
+  text-align: left;
+  font-size: 11px;
+  position: relative;
+  top: 2px;
+}
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
