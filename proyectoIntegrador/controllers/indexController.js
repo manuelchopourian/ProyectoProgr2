@@ -50,18 +50,22 @@ let indexController = {
             
           },
         },
+        
+
     })
         .then(productos => {
+
+  
           if(productos.length != 0){
             res.render('search-results', {title:'Resultados de busqueda', productos })
           }
           else{
           res.render('search-results', {title: 'No hay resultados para su criterio de búsqueda', productos})
           }
+
         })
 
-        .catch(err=> console.log(err))
-    
+        .catch(err=> console.log(err));
   },
   login : (req, res) => { 
     if(req.session.user != undefined){
