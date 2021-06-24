@@ -6,9 +6,17 @@
 			
             <div class="col-12">
 				<% if(follow.length == 0){ %> 
-					<h2 class="products-title"><%= usuario.nombre_usuario %> no tiene seguidos</h2>
+					<% if(usuario.id != locals.user.id){ %> 
+						<h2 class="products-title"><%= usuario.nombre_usuario %> no tiene seguidos</h2>
+						<% } else{ %> 
+							<h2 class="products-title">No tienes seguidos</h2>
+						 <% } %> 
 			   <% } else{ %> 
+					<% if(usuario.id != locals.user.id){ %> 
 						<h2 class="products-title">Seguidos de <%= usuario.nombre_usuario %></h2>
+						<% } else{ %> 
+							<h2 class="products-title">Tus seguidos</h2>
+						 <% } %> 
 				   <% } %> 
 			</div>
 			<% for (let i = 0; i < follow.length; i++) { %>

@@ -199,6 +199,7 @@ hr {
   transition: 300ms;
   margin: 20px 0;
   height: 42vh;
+  object-fit: cover;
 }
 
 .product-box a {
@@ -207,6 +208,7 @@ hr {
 
 .product-box_image {
   border-bottom: 1px solid var(--light-gray);
+  object-fit: cover;
 }
 .product-box img{
   height: 32vh;
@@ -724,6 +726,90 @@ input{
   top: 2px;
 }
 
+* {box-sizing: border-box}
+	.mySlides {display: none}
+	img {vertical-align: middle;}
+	
+	/* Slideshow container */
+	.slideshow-container {
+	  max-width: 100%;
+	  position: relative;
+	}
+	
+	/* Next & previous buttons */
+	.prev, .next {
+	  cursor: pointer;
+	  position: absolute;
+	  top: 50%;
+	  width: auto;
+	  padding: 16px;
+	  margin-top: -22px;
+	  color: white;
+	  font-weight: bold;
+	  font-size: 18px;
+	  transition: 0.6s ease;
+	  border-radius: 0 3px 3px 0;
+	  user-select: none;
+	}
+	
+	/* Position the "next button" to the right */
+	.next {
+	  right: 0;
+	  border-radius: 3px 0 0 3px;
+	}
+	
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover, .next:hover {
+	  background-color: rgba(0,0,0,0.8);
+	}
+	
+	/* Caption text */
+	.text{
+		width: 100%;
+		margin: auto;
+		text-align: center;
+		font-weight: 100;
+		margin-top: 20px;
+		/* position: relative;
+		bottom: 25px; */
+		border-radius: 5px;
+	}
+	.text a{
+		/* color: white; */
+	  color:#bd0d0d;;
+	  font-size: 16px;
+	  font-style: italic;
+	}
+	
+	/* Fading animation */
+	.fade {
+	  -webkit-animation-name: fade;
+	  -webkit-animation-duration: 1.5s;
+	  animation-name: fade;
+	  animation-duration: 1.5s;
+	}
+
+	.foto-carrousel{
+		width: fit-content;
+		object-fit: cover;
+		width: 100%;
+		height: 38vh;
+	}
+	
+	@-webkit-keyframes fade {
+	  from {opacity: .4} 
+	  to {opacity: 1}
+	}
+	
+	@keyframes fade {
+	  from {opacity: .4} 
+	  to {opacity: 1}
+	}
+	
+	/* On smaller screens, decrease text size */
+	@media only screen and (max-width: 300px) {
+	  .prev, .next,.text {font-size: 11px}
+	}
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
   .main-header_credit-link {
@@ -748,6 +834,10 @@ input{
     align-items: center;
     justify-content: space-between;
   }
+  .left-navbar{
+    position: relative;
+    right: 30px;
+  }
 
   .left-navbar a,
   .right-navbar a {
@@ -762,10 +852,20 @@ input{
   .left-navbar li {
     margin-right: 15px;
   }
-
-  .right-navbar li{
-    margin-left: 25px;
+  .left-navbar .inicio {
+    margin-right: 15px;
   }
+
+  .right-navbar li a{
+    margin-left: 25px;
+    margin-right: 10px;
+    
+  }
+  .right-navbar{
+    position: relative;
+    left: 30px;
+  }
+
 
   .main-footer {
     padding: 40px 0;
@@ -775,4 +875,5 @@ input{
     width: 95%;
     margin: auto;
   }
+
 }
