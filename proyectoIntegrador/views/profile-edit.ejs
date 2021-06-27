@@ -32,9 +32,11 @@
 					<input type="file" placeholder="URL de nueva imagen del perfil" name="url_imagen_usuario" accept="image/*">
 				</p>
 				</div>
-				<button type="submit" onclick="show()" class="registrado-boton">Confirmar Cambios</button>
+				<button type="submit" onclick="" class="registrado-boton">Confirmar Cambios</button>
 			
 				<a href='/profile/delete/id/<%= perfil.id %> ' class="perfil-borrado">Borrar perfil</a>
+
+				<a href='/profile/password/<%= perfil.id %> ' class="perfil-borrado">Cambiar Contraseña</a>
 				
 			</form>
 			

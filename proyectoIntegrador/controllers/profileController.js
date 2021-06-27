@@ -1,6 +1,8 @@
 const db = require('../database/models');
 const op = db.Sequelize.Op;
 
+const bcrypt = require('bcryptjs');
+
 let profileController = {
   
    index: (req,res) =>{
@@ -193,7 +195,9 @@ let profileController = {
     
   },
   addFav:(req,res) =>{
-  if(req.session.user != undefined ){
+    db.Product.findByPk(req.params.id)
+    .then((productos)=>{
+  if(req.session.user != undefined && productos.user_id != req.session.user.id){
     db.Favorite.findAll({
       where: {
         product_id: req.params.id,
@@ -201,12 +205,12 @@ let profileController = {
       },
     })
     .then((filtro)=>
-      res.render('favorite-add',{filtro})
+      res.render('favorite-add',{filtro, productos})
     )
     }
     else{
       res.redirect('/')
-    }
+    }})
 },
   crear:(req,res) =>{
     db.Favorite.findAll({
@@ -285,6 +289,68 @@ let profileController = {
   }  
     
   },
+  password:(req,res) => { 
+    if(req.session.user != undefined && req.params.id == req.session.user.id){
+      return res.render('password-edit')
+  } else {
+      return res.redirect('/')
+  }
+},
+  newPassword:(req,res) => {
+
+    let errors = {};
+
+    if(req.body.expassword == ""){ 
+      errors.register = "Contraseña Actual no puede estar vacio"
+      res.locals.errors = errors
+
+      return res.render('password-edit')
+ } 
+  else if(req.body.password == ""){
+    errors.register = "Nueva Contraseña no puede estar vacio"
+    res.locals.errors = errors
+
+    return res.render('password-edit')
+} 
+  else if(req.body.repassword == ""){ // La confirmacion de contraseña no este vacio
+    errors.register = "Confirmar Contraseña no puede estar vacio"
+    res.locals.errors = errors
+
+    return res.render('password-edit')
+  }
+  else if(req.body.password != req.body.repassword ) { // El password y repassword no son iguales
+    errors.register = "La confirmacion de contraseñas no coinciden"
+    res.locals.errors = errors
+
+    return res.render('password-edit')
+} 
+
+  else {
+    db.User.findOne({
+      where: [{ id: req.session.user.id}],
+     })
+     .then((user)=> {
+     if(bcrypt.compareSync(req.body.expassword, user.password) == false){
+      errors.register = "Contraseña Actual incorrecta";
+      res.locals.errors = errors;
+      return res.render('password-edit') 
+     }
+     else{
+      let usuarios = {
+        password: bcrypt.hashSync(req.body.password, 11),
+        }
+          db.User.update(usuarios, {
+            where:{
+              id:req.session.user.id
+      
+            }
+          })
+          .then(()=> res.redirect('/profile/id/' + req.session.user.id))
+          .catch(err => console.log(err))
+     }
+      })
+    }
+  }
 }
  
  module.exports = profileController;

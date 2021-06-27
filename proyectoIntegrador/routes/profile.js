@@ -31,7 +31,8 @@ router.get('/following/:id', profileController.seguidos);
 router.get('/followers/:id', profileController.seguidores);
 router.get('/favorites/add/:id', profileController.addFav);
 router.post('/favorites/add/:id', profileController.crear);
-
+router.get('/password/:id', profileController.password);
+router.post('/password/:id', profileController.newPassword);
 
 
 module.exports = router;
