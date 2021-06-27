@@ -324,6 +324,12 @@ let profileController = {
 
     return res.render('password-edit')
 } 
+  else if (req.body.password.length < 3){ // El password tiene que tener 3 caracteres o más
+    errors.register = "La nueva contraseña debe tener al menos 3 caracteres"
+    res.locals.errors = errors
+
+    return res.render('password-edit')
+  } 
 
   else {
     db.User.findOne({

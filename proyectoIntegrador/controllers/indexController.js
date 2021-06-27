@@ -136,7 +136,7 @@ logout: (req, res)=>{
 
             return res.render('register')
        } 
-       else if (req.body.password.length <= 3){ // El password tiene que tener 3 caracteres o más
+       else if (req.body.password.length < 3){ // El password tiene que tener 3 caracteres o más
         errors.register = "La Contraseña debe tener al menos 3 caracteres"
         res.locals.errors = errors
 
